@@ -2,7 +2,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file
-
   console.log("Testing Consoles");
 
   $scope.template = TemplateService.changecontent("home");
@@ -10,12 +9,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 
-  $scope.mySlides = [
-    'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
-    'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
-    'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
-    'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
-  ];
+  $scope.section = {
+    one: "views/section/section1.html",
+    six: "views/section/section6.html",
+    seven: "views/section/section7.html",
+    eight: "views/section/section8.html"
+  };
+
 })
 
 .controller('headerctrl', function($scope, TemplateService) {

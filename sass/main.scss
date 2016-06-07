@@ -11,9 +11,7 @@ $brand-warning: #ffec39 !default;
 $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-body {
-  padding-top: 70px;
-}
+body {}
 img.loading {
   text-align: center;
   opacity: 1;
@@ -52,3 +50,21 @@ a, .btn {
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";
+
+@mixin background($url, $size: cover) {
+  background-image: url($url);
+  background-size: $size;
+  background-position: center;
+}
+
+.home {
+  .one, .two, .three, .four, .five, .six, .seven, .eight {
+    width: 100%;
+    height: 1080px;
+  }
+  .one { @include background('../img/home/01.jpg'); }
+  .two { @include background('../img/home/02.jpg'); }
+  .three { @include background('../img/home/03.jpg'); }
+  .four { @include background('../img/home/04.jpg'); }
+  .five { @include background('../img/home/05.jpg'); }
+}
