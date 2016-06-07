@@ -10,8 +10,19 @@ $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
 $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
+
+$brand-lighter-gray: #e1e1e1 !default; //contact text
+$brand-light-gray: #d5d5d5 !default; // about background
+$brand-hamburger-gray: #b4b4b4 !default; // hamburger
+$brand-gray: #c4c4c4 !default; // landing hurel
+$brand-dark-gray: #151515 !default; //work background
+
+$brand-text-color: #262626 !default; //about description
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-body {}
+body {
+  background-color: black;
+  color: white;
+}
 img.loading {
   text-align: center;
   opacity: 1;
