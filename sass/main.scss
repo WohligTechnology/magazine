@@ -4,6 +4,26 @@
 @import "../bower_components/flexslider/flexslider.css";
 @import "../bower_components/font-awesome/css/font-awesome.min.css";
 @import "../bower_components/fancyBox/source/jquery.fancybox.css";
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+//custom fonts
+@font-face {
+  font-family: "Nova";
+  src: url("../fonts/nova.otf");
+}
+@font-face {
+  font-family: "Notera";
+  src: url("../fonts/notera.ttf");
+}
+@font-face {
+  font-family: "Spinwerad";
+  src: url("../fonts/spinwerad.ttf");
+}
+@font-face {
+  font-family: "Gotham Book";
+  src: url("../fonts/gotham_book.ttf");
+}
+
 /* Bootstrap Variables Goes Here */
 $brand-primary: #0d9dff !default;
 $brand-success: #84ce3c !default;
@@ -16,8 +36,13 @@ $brand-light-gray: #d5d5d5 !default; // about background
 $brand-hamburger-gray: #b4b4b4 !default; // hamburger
 $brand-gray: #c4c4c4 !default; // landing hurel
 $brand-dark-gray: #151515 !default; //work background
-
 $brand-text-color: #262626 !default; //about description
+
+$font-nova: "Nova", sans-serif;
+$font-notera: "Notera", sans-serif;
+$font-spinwerad: "Spinwerad", sans-serif;
+$font-gotham-book: "Gotham Book", sans-serif;
+$font-montserrat: "Montserrat", sans-serif;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 body {}
 img.loading {
@@ -80,6 +105,7 @@ a, .btn {
 }
 
 .section-center {
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -113,5 +139,31 @@ a, .btn {
 
   .about, .work, .contact {
     @extend .section-center;
+  }
+
+  .about {
+    position: relative;
+    h2 {
+      position: relative;
+      left: -100px;
+      margin: 0;
+      font-family: $font-nova;
+      font-size: 200px;
+      letter-spacing: 10px;
+      line-height: 0.6;
+    }
+    .about-description {
+      margin-top: 40px;
+      p { font-size: 13px; }
+    }
+  }
+
+  .work {
+    .editorials-section, .celebrities-section,
+    .tvc-section, .designers-section {
+      width: 24%;
+      display: inline-block;
+      vertical-align: top;
+    }
   }
 }
