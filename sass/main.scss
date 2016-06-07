@@ -19,10 +19,7 @@ $brand-dark-gray: #151515 !default; //work background
 
 $brand-text-color: #262626 !default; //about description
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-body {
-  background-color: black;
-  color: white;
-}
+body {}
 img.loading {
   text-align: center;
   opacity: 1;
@@ -43,6 +40,19 @@ a, .btn {
   cursor: pointer;
   @include transition(all ease 300ms);
 }
+
+//color classes
+.white { color: white; }
+.black { color: black; }
+.lighter-gray { color: $brand-lighter-gray; }
+.gray { color: $brand-gray; }
+.text-color { color: $brand-text-color; }
+
+.white-bg { background-color: white; }
+.black-bg { background-color: black; }
+.light-gray-bg { background-color: $brand-light-gray; }
+.dark-gray-bg { background-color: $brand-dark-gray; }
+
 //bootstrap forms
 .input-lg,
 .input-group-lg > .form-control,
@@ -62,20 +72,45 @@ a, .btn {
 /* Start writing sass here */
 @import "fancybox-override";
 
+// background mixin
 @mixin background($url, $size: cover) {
   background-image: url($url);
   background-size: $size;
   background-position: center;
 }
 
+.section-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .home {
   .one, .two, .three, .four, .five, .six, .seven, .eight {
     width: 100%;
     height: 1080px;
+    position: relative;
   }
-  .one { @include background('../img/home/01.jpg'); }
-  .two { @include background('../img/home/02.jpg'); }
-  .three { @include background('../img/home/03.jpg'); }
-  .four { @include background('../img/home/04.jpg'); }
-  .five { @include background('../img/home/05.jpg'); }
+  .one { @include background('../img/home/01.jpg'); } // landing
+  .two { @include background('../img/home/02.jpg'); } // editorials
+  .three { @include background('../img/home/03.jpg'); } // tvc
+  .four { @include background('../img/home/04.jpg'); } // celebrities
+  .five { @include background('../img/home/05.jpg'); } // designers
+  .six {} // about
+  .seven {} // work
+  .eight {} // contact
+
+  .landing {
+    .mouse-image {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+  }
+
+  .about {
+    @extend .section-center;
+  }
 }
