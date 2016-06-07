@@ -91,6 +91,7 @@ a, .btn {
     width: 100%;
     height: 1080px;
     position: relative;
+    overflow: hidden;
   }
   .one { @include background('../img/home/01.jpg'); } // landing
   .two { @include background('../img/home/02.jpg'); } // editorials
@@ -110,7 +111,7 @@ a, .btn {
     }
   }
 
-  .about {
+  .about, .work, .contact {
     @extend .section-center;
   }
 }
