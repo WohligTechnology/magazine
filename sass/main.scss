@@ -107,10 +107,17 @@ a {
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override"; // background mixin
-@mixin background($url, $size: cover) {
+@mixin background($url, $size: 100%) {
     background-image: url($url);
     background-size: $size;
-    background-position: center;
+    // background-position: center;
+    height: auto;
+    width: 100%;
+    max-width: 2560px;
+    padding-bottom: 56%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
 }
 .section-center {
     width: 100%;
