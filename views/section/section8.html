@@ -1,58 +1,59 @@
 <!-- CONTACT -->
-
 <div class="contact">
   <div class="container">
     <div class="row">
-
-      <div class="contact-details">
-        <h4 class="text-uppercase">Contact</h4>
-        <p><a href="mailto:info@florianhurel.com">info@florianhurel.com</a></p>
-        <p><a href="tel:+9125222588">+91 2522 2588 2566</a></p>
-      </div>
-
-      <form class="" name="contact">
-        <div class="col-sm-6">
+      <div class="col-md-offset-1 col-md-10">
+        <div class="row">
+          <div class="contact-details">
+            <h4 class="text-uppercase">Contact</h4>
+            <p><a href="mailto:info@florianhurel.com">info@florianhurel.com</a></p>
+            <p><a href="tel:+9125222588">+91 2522 2588 2566</a></p>
+          </div>
           <div class="contact-form">
-            <div class="form-group form-inline">
-              <label class="text-uppercase" for="name">Name</label>
-              <input name="name" ng-model="formcontact.name" type="text" id="name" class="form-control" required>
-              <div class="" ng-show="contact.name.$error.required && contact.name.$touched">
-                <span>Please Enter Your Name.</span>
+            <form name="contact">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="contact-form">
+                    <div class="form-group form-inline">
+                      <label class="text-uppercase" for="name">Name</label>
+                      <input name="name" ng-model="formcontact.name" type="text" id="name" class="form-control" required>
+                      <div class="" ng-show="contact.name.$error.required && contact.name.$touched">
+                        <span>Please Enter Your Name.</span>
+                      </div>
+                    </div>
+                    <div class="form-group form-inline">
+                      <label class="text-uppercase" for="email">Email</label>
+                      <input name="email" ng-model="formcontact.email" type="text" id="email" class="form-control" required>
+                      <div class="" ng-show="contact.email.$error.required && contact.email.$touched">
+                        <span>Please Enter Your Email.</span>
+                      </div>
+                    </div>
+                    <div class="form-group form-inline">
+                      <label class="text-uppercase" for="phone">Phone</label>
+                      <input name="phone" ng-model="formcontact.phone" type="text" id="phone" class="form-control" required>
+                      <div class="" ng-show="contact.phone.$error.required && contact.phone.$touched">
+                        <span>Please Enter Your Phone.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="contact-forms">
+                    <div class="form-group">
+                      <label class="text-uppercase message-label" for="message">Message</label>
+                      <textarea name="message" ng-model="formcontact.message" type="text" id="message" class="form-control" required></textarea>
+                      <div class="" ng-show="contact.message.$error.required && contact.message.$touched">
+                        <span>Please Enter Your Message.</span>
+                      </div>
+                    </div>
+                    <button type="button" name="send" class="text-uppercase pull-right btn btn-black">Send</button>
+                  </div>
+                </div>
               </div>
-            </div>
-
-            <div class="form-group form-inline">
-              <label class="text-uppercase" for="email">Email</label>
-              <input name="email" ng-model="formcontact.email" type="text" id="email" class="form-control" required>
-              <div class="" ng-show="contact.email.$error.required && contact.email.$touched">
-                <span>Please Enter Your Email.</span>
-              </div>
-            </div>
-
-            <div class="form-group form-inline">
-              <label class="text-uppercase" for="phone">Phone</label>
-              <input name="phone" ng-model="formcontact.phone" type="text" id="phone" class="form-control" required>
-              <div class="" ng-show="contact.phone.$error.required && contact.phone.$touched">
-                <span>Please Enter Your Phone.</span>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
-
-        <div class="col-sm-6">
-          <div class="contact-forms">
-            <div class="form-group">
-              <label class="text-uppercase message-label" for="message">Message</label>
-              <textarea name="message" ng-model="formcontact.message" type="text" id="message" class="form-control" required></textarea>
-              <div class="" ng-show="contact.message.$error.required && contact.message.$touched">
-                <span>Please Enter Your Message.</span>
-              </div>
-            </div>
-            <button type="button" name="send" class="text-uppercase pull-right btn btn-black">Send</button>
-          </div>
-        </div>
-      </form>
-
+      </div>
     </div>
   </div>
 </div>

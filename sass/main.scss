@@ -6,20 +6,20 @@
 @import "../bower_components/fancyBox/source/jquery.fancybox.css";
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700); //custom fonts
 @font-face {
-    font-family: "Nova";
-    src: url("../fonts/nova.otf");
+  font-family: "Nova";
+  src: url("../fonts/nova.otf");
 }
 @font-face {
-    font-family: "Notera";
-    src: url("../fonts/notera.ttf");
+  font-family: "Notera";
+  src: url("../fonts/notera.ttf");
 }
 @font-face {
-    font-family: "Spinwerad";
-    src: url("../fonts/spinwerad.ttf");
+  font-family: "Spinwerad";
+  src: url("../fonts/spinwerad.ttf");
 }
 @font-face {
-    font-family: "Gotham Book";
-    src: url("../fonts/gotham_book.ttf");
+  font-family: "Gotham Book";
+  src: url("../fonts/gotham_book.ttf");
 }
 /* Bootstrap Variables Goes Here */
 $brand-primary: #0d9dff !default;
@@ -32,6 +32,7 @@ $brand-light-gray: #d5d5d5 !default; // about background
 $brand-hamburger-gray: #b4b4b4 !default; // hamburger
 $brand-gray: #c4c4c4 !default; // landing hurel
 $brand-dark-gray: #151515 !default; //work background
+$brand-dark: #111111 !default; //work background
 $brand-text-color: #262626 !default; //about description
 $font-nova: "Nova", sans-serif;
 $font-notera: "Notera", sans-serif;
@@ -39,55 +40,92 @@ $font-spinwerad: "Spinwerad", sans-serif;
 $font-gotham-book: "Gotham Book", sans-serif;
 $font-montserrat: "Montserrat", sans-serif;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-body {}
 img.loading {
-    text-align: center;
-    opacity: 1;
-    width: 32px !important;
-    height: auto;
+  text-align: center;
+  opacity: 1;
+  width: 32px !important;
+  height: auto;
+  color: $brand-dark-gray;
 }
 img {
-    opacity: 0;
-    @include transition(all 300ms ease);
+  opacity: 0;
+  @include transition(all 300ms ease);
 }
 img.doneLoading {
-    opacity: 1;
+  opacity: 1;
 }
 nav li:hover .dropdown-menu {
-    display: block;
+  display: block;
 }
 .btn,
 a {
-    cursor: pointer;
-    @include transition(all ease 300ms);
+  cursor: pointer;
+  @include transition(all ease 300ms);
 }
 //color classes
 .white {
-    color: white;
+  color: white;
 }
 .black {
-    color: black;
+  color: black;
 }
 .lighter-gray {
-    color: $brand-lighter-gray;
+  color: $brand-lighter-gray;
 }
 .gray {
-    color: $brand-gray;
+  color: $brand-gray;
 }
 .text-color {
-    color: $brand-text-color;
+  color: $brand-text-color;
 }
 .white-bg {
-    background-color: white;
+  background-color: white;
 }
 .black-bg {
-    background-color: black;
+  background-color: black;
+}
+body {
+  background: $brand-dark;
+}
+.header {
+  background: transparent;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 99;
+  top: 25px;
+  .nav {
+    a {
+      display: block;
+      padding: 10px;
+      img {
+        height: 45px;
+      }
+    }
+  }
+}
+.navbar-toggle.humburger {
+  display: block!important;
+  margin: 0 15px;
+  padding: 5px 10px;
+  float: left;
+  .icon-bar {
+    background: $brand-hamburger-gray;
+  }
+  .navbar {
+    background: #fff;
+    margin-bottom: 0;
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+  }
 }
 .light-gray-bg {
-    background-color: $brand-light-gray;
+  background-color: $brand-light-gray;
 }
 .dark-gray-bg {
-    background-color: $brand-dark-gray;
+  background-color: $brand-dark-gray;
 }
 //bootstrap forms
 .btn,
@@ -96,167 +134,212 @@ a {
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn,
 .input-lg {
-    border-radius: 0;
-    @include box-shadow(none);
+  border-radius: 0;
+  @include box-shadow(none);
 }
 .form-control:focus {
-    border-color: $brand-primary;
-    outline: 0;
-    @include box-shadow(none);
+  border-color: $brand-primary;
+  outline: 0;
+  @include box-shadow(none);
 }
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override"; // background mixin
 @mixin background($url, $size: 100%) {
-    background-image: url($url);
-    background-size: $size;
-    // background-position: center;
-    height: auto;
-    width: 100%;
-    max-width: 2560px;
-    padding-bottom: 56%;
-    margin: 0;
-    background-repeat: no-repeat;
-    background-position: 50% 100%;
+  background-image: url($url);
+  background-size: $size;
+  // background-position: center;
+  height: auto;
+  width: 100%;
+  max-width: 2560px;
+  padding-bottom: 56%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
 }
 .section-center {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .home {
-    .eight,
-    .five,
-    .four,
-    .one,
-    .seven,
-    .six,
-    .three,
-    .two {
-        width: 100%;
-        height: 100vh;
-        position: relative;
-        overflow: hidden;
+  .eight,
+  .five,
+  .four,
+  .one,
+  .seven,
+  .six,
+  .three,
+  .two {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  .one {
+    @include background( '../img/home/01.jpg');
+  }
+  // landing
+  .two {
+    @include background( '../img/home/02.jpg');
+  }
+  // editorials
+  .three {
+    @include background( '../img/home/03.jpg');
+  }
+  // tvc
+  .four {
+    @include background( '../img/home/04.jpg');
+  }
+  // celebrities
+  .five {
+    @include background( '../img/home/05.jpg');
+  }
+  // designers
+  .six {}
+  // about
+  .seven {}
+  // work
+  .eight {}
+  // contact
+  .landing {
+    .mouse-image {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translate(-50%, 0%);
     }
-    .one {
-        @include background( '../img/home/01.jpg');
+  }
+  .about,
+  .contact,
+  .work {
+    @extend .section-center;
+  }
+  .about {
+    position: relative;
+    h2 {
+      position: relative;
+      left: -100px;
+      margin: 0;
+      font-family: $font-nova;
+      font-size: 200px;
+      letter-spacing: 10px;
+      line-height: 0.6;
     }
-    // landing
-    .two {
-        @include background( '../img/home/02.jpg');
+    .about-description {
+      margin-top: 40px;
+      p {
+        font-size: 13px;
+      }
     }
-    // editorials
-    .three {
-        @include background( '../img/home/03.jpg');
+  }
+  .contact-details {
+    margin-bottom: 20px;
+    h4 {
+      position: relative;
+      margin: 0;
+      font-family: $font-nova;
+      font-size: 150px;
+      letter-spacing: 10px;
+      color: $brand-lighter-gray;
     }
-    // tvc
-    .four {
-        @include background( '../img/home/04.jpg');
-    }
-    // celebrities
-    .five {
-        @include background( '../img/home/05.jpg');
-    }
-    // designers
-    .six {}
-    // about
-    .seven {}
-    // work
-    .eight {}
-    // contact
-    .landing {
-        .mouse-image {
-            position: absolute;
-            bottom: 50px;
-            left: 50%;
-            transform: translate(-50%, 0%);
-        }
-    }
-    .about,
-    .contact,
-    .work {
-        @extend .section-center;
-    }
-    .about {
-        position: relative;
-        h2 {
-            position: relative;
-            left: -100px;
-            margin: 0;
-            font-family: $font-nova;
-            font-size: 200px;
-            letter-spacing: 10px;
-            line-height: 0.6;
-        }
-        .about-description {
-            margin-top: 40px;
-            p {
-                font-size: 13px;
-            }
-        }
-    }
-    .contact-details{
-        h4{
-          font-family: "Nova", sans-serif;
-    color: $brand-lighter-gray;
-        }
-        p{
-          a{
-              text-decoration: none;
-              font-family: $font-montserrat;
-              color:black;
-          }
-        }
-    }
-    .contact-form {
-      margin-top: 8px;
-      label{
+    p {
+      margin: 0;
+      a {
+        text-decoration: none;
         font-family: $font-montserrat;
-        color: #a1a1a1;
-      }
-        input.form-control {
-            float:right;
-            border: 0;
-            border-bottom: 1px solid #ccc;
-            vertical-align: text-bottom;
-            width: 88%;
-            padding: 0 8px;
-            height: 19px;
-        }
-    }
-    .contact-forms{
-      textarea.form-control {
-          height: 84px;
-          resize: none;
-      }
-      .btn{
-        background: #151515;
-    color: #ffffff;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    padding: 4px 24px;
+        color: black;
+        font-size: 18px;
       }
     }
-    .message-label {
+  }
+  .contact-form {
+    margin-top: 8px;
+    label {
       font-family: $font-montserrat;
       color: #a1a1a1;
-        bottom: -12px;
-        position: relative;
-        left: 12px;
-        background: white;
-        padding: 0 5px;
     }
-
-    .work {
-        .celebrities-section,
-        .designers-section,
-        .editorials-section,
-        .tvc-section {
-            width: 24%;
-            display: inline-block;
-            vertical-align: top;
-        }
+    input.form-control {
+      float: right;
+      border: 0;
+      border-bottom: 1px solid #ccc;
+      vertical-align: text-bottom;
+      width: 85%;
+      padding: 0 8px;
+      height: 19px;
     }
+    .form-group.form-inline {
+      height: 45px;
+    }
+  }
+  .contact-forms {
+    textarea {
+      height: 122px;
+      resize: none;
+    }
+    .btn {
+      font-family: $font-montserrat;
+      background: #151515;
+      color: #ffffff;
+      font-size: 14px;
+      padding: 4px 24px;
+    }
+  }
+  .message-label {
+    font-family: $font-montserrat;
+    color: #a1a1a1;
+    bottom: -12px;
+    position: relative;
+    left: 12px;
+    background: white;
+    padding: 0 5px;
+  }
+}
+.work {
+  .celebrities-section,
+  .designers-section,
+  .editorials-section,
+  .tvc-section {
+    width: 24%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .work-text {
+    h2 {
+      font-family: $font-nova;
+      font-weight: 500;
+      font-size: 180px;
+      letter-spacing: 10px;
+      line-height: 0.6;
+      margin: 0 0 0 100px;
+    }
+  }
+  .work-box {
+    .text-same {
+      font-family: $font-nova;
+      font-size: 38px;
+      font-weight: 600;
+      text-align: right;
+      letter-spacing: 2px;
+      position: relative;
+      z-index: 1;
+    }
+    img {
+      position: relative;
+      z-index: 0;
+    }
+    .odd {
+      img {
+        margin-top: -15px;
+      }
+      h4 {
+        margin: 70px 10px 0;
+      }
+    }
+    .even h4 {
+      margin: -20px 20px 0;
+    }
+  }
 }
