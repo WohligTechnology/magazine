@@ -17,6 +17,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     url: "/",
     templateUrl: "views/template.html",
     controller: 'HomeCtrl'
+  })
+    .state('editorial', {
+    url: "/editorial",
+    templateUrl: "views/template.html",
+    controller: 'EditorialCtrl'
   });
   $urlRouterProvider.otherwise("/");
   $locationProvider.html5Mode(isproduction);
