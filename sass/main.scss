@@ -95,18 +95,72 @@ body {
   z-index: 99;
   top: 25px;
   .nav {
+    text-align: center;
     a {
-      display: block;
       padding: 10px;
+      display: inline-block;
       img {
         height: 45px;
       }
     }
   }
 }
+.close-right {
+  position: absolute;
+  left: 130px;
+  top: 40px;
+  line-height: 1;
+  @include transition(all ease 300ms);
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+.sidemenu {
+  position: fixed;
+  width: 100%;
+  background: rgba(255,255,255,0.90);
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  &.menu-out {
+    @include transform(translateY(-120%));
+    @include transition(all 300ms linear);
+    z-index: 99;
+  }
+  &.menu-in {
+    @include transform(translateY(0));
+    @include transition(all 300ms linear);
+    z-index: 99;
+  }
+}
+.menu-made {
+  margin-top: 32px;
+  text-align: center;
+  ul {
+    margin-top: 30px;
+    li a {
+      padding: 8px 0 !important;
+      font-size: 55px;
+      letter-spacing: 5px;
+      font-family: $font-montserrat;
+      text-transform: uppercase;
+      color: $brand-dark-gray;
+      line-height: 130%;
+      @include transition(all ease 500ms);
+      &:hover,
+      &:focus {
+        outline: 0;
+        text-decoration: none;
+        color: lighten($brand-dark-gray,30%);
+      }
+    }
+  }
+}
 .navbar-toggle.humburger {
   display: block!important;
-  margin: 0 15px;
+  margin: 0;
   padding: 5px 10px;
   float: left;
   .icon-bar {
@@ -118,6 +172,9 @@ body {
     &:hover,
     &:focus {
       outline: none;
+      .icon-bar {
+        background: darken($brand-hamburger-gray, 50%);
+      }
     }
   }
 }
@@ -162,7 +219,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  @include transform(translate(-50%, -50%));
 }
 .home {
   .eight,
@@ -281,7 +338,7 @@ body {
     }
     .btn {
       font-family: $font-montserrat;
-      background: #151515;
+      background: $brand-dark-gray;
       color: #ffffff;
       font-size: 14px;
       padding: 4px 24px;
@@ -317,6 +374,9 @@ body {
     }
   }
   .work-box {
+    a:hover {
+      text-decoration: none;
+    }
     .text-same {
       font-family: $font-nova;
       font-size: 38px;
@@ -343,13 +403,92 @@ body {
     }
   }
 }
-.pt100 {
-  padding-top: 100px;
+.pt80 {
+  padding-top: 80px;
 }
 .all-slider {
+  padding: 0 30px 0 25px;
   .flexslider {
     margin: 0 0 60px;
     background: transparent;
     border-color: transparent;
   }
+  .flex-direction-nav .flex-disabled {
+    opacity: 0.7!important;
+    filter:alpha(opacity=0.7);
+    z-index: 1!important;
+    cursor: pointer;
+  }
+  .flex-direction-nav a.flex-prev:before {
+    content: url('../img/left.png');
+  }
+  .flex-direction-nav a.flex-next:before {
+    content: url('../img/right.png');
+  }
+  .flex-control-nav {
+    display: none;
+  }
+  .flexslider .flex-direction-nav .flex-prev {
+    right: 90px;
+    bottom: -74px;
+    opacity: 1;
+    left: auto!important;
+    top: auto;
+  }
+  .flex-direction-nav a {
+    width: 30px;
+    height: 45px;
+    right: 50px;
+    text-align: right;
+    top: auto!important;
+    bottom: -74px;
+    opacity: 0.7;
+  }
+  .flex-direction-nav .flex-prev {
+    right: 90px;
+    // @include transform(rotate(180deg));
+  }
+  .flexslider:hover .flex-direction-nav .flex-next {
+    opacity: 1;
+    right: 50px;
+  }
+  .flexslider:hover .flex-disabled,
+  .flexslider:hover .flex-direction-nav .flex-after {
+    opacity: 1;
+    right: 90px;
+    outline: none;
+  }
+  .flexslider:hover .flex-direction-nav .flex-prev {
+    opacity: 1;
+    left: auto!important;
+    right: 90px;
+    outline: none;
+  }
+  .slider-items {
+    position: relative;
+    .get-center {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      padding: 6px 12px;
+      color: #000;
+      font-size: 18px;
+      width: 35px;
+      height: 35px;
+      background: #fff;
+    }
+  }
+}
+.hideclick {
+  opacity: 0;
+}
+.head-text h2 {
+  margin: 10px 0 -32px;
+  font-size: 150px;
+  letter-spacing: 10px;
+  font-family: $font-nova;
+}
+a:focus {
+  outline: 0 auto -webkit-focus-ring-color;
+  outline-offset: -0px;
 }

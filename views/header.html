@@ -1,20 +1,22 @@
-<header>
+<header ng-controller="headerctrl">
   <div class="container">
-    <nav class="nav white-bg">
+    <nav class="nav white-bg {{hideclick}}">
       <div class="navbar-toggle humburger">
-        <button type="button" class="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+        <button type="button" class="navbar collapsed {{buttonpos}}" ng-click="getnav();">
+          <!-- <span class="sr-only">Toggle navigation</span> -->
+          <span class="icon-bar {{onebar}}"></span>
+          <span class="icon-bar {{secondbar}}"></span>
+          <span class="icon-bar {{thirdbar}}"></span>
         </button>
       </div>
       <a class="text-center" ui-sref="home">
         <img src="img/logo.png" alt="">
       </a>
-      <!-- <div class="collapse navbar-collapse" id="nav-collapse">
-        <div ng-include="template.menu" class="template menu"></div>
-      </div> -->
     </nav>
+  </div>
+  <div class="sidemenu {{getslide}}">
+    <div class="collapse navbar-collapse" id="nav-collapse">
+      <div ng-include="template.menu" class="template menu"></div>
+    </div>
   </div>
 </header>
