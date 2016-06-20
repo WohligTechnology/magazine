@@ -8,7 +8,7 @@
         <li class="">
           <div class="slider-items">
             <div class="mb15">
-            <a href="https://www.youtube.com/v/{{tvc}}" fancybox-box  class="fancybox.iframe">
+              <a href="https://www.youtube.com/v/{{tvc}}" fancybox-box class="fancybox.iframe" rel="gallery1">
                 <img ng-src="http://img.youtube.com/vi/{{tvc}}/hqdefault.jpg" alt="" class="youtube-img img-responsive">
                 <span class="get-center youtube-play"><i class="fa fa-play"></i></span>
               </a>
@@ -16,6 +16,14 @@
           </div>
         </li>
       </flex-slider>
+    </div>
+    <div class="link-made">
+      <ul class="links list-inline">
+        <li>Also View : </li>
+        <li><a ui-sref="editorial" class="uppercase">Editorials</a></li>
+          <li><a ui-sref="celebrities" class="uppercase">Celebirties</a></li>
+        <li><a ui-sref="designers" class="uppercase">Designers</a></li>
+      </ul>
     </div>
   </div>
 </section>

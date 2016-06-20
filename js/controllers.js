@@ -51,7 +51,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       'img/celebrities/5.png',
       'img/celebrities/6.png',
       'img/celebrities/7.png',
-      'img/celebrities/8.pngpng',
+      'img/celebrities/8.png',
       'img/celebrities/9.png',
       'img/celebrities/10.png',
       'img/celebrities/11.png',

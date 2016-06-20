@@ -8,11 +8,20 @@
         <li class="">
           <div class="slider-items">
             <div class="mb15">
-              <img ng-src="{{celebritie}}" alt="" class="img-responsive">
+              <a href="{{celebritie}}" fancybox-box rel="gallery1">
+                <img ng-src="{{celebritie}}" alt="" class="img-responsive">
             </div>
           </div>
         </li>
       </flex-slider>
+    </div>
+    <div class="link-made">
+      <ul class="links list-inline">
+        <li>Also View : </li>
+        <li><a ui-sref="editorial" class="uppercase">Editorials</a></li>
+        <li><a ui-sref="tvc" class="uppercase">TVC's</a></li>
+        <li><a ui-sref="designers" class="uppercase">Designers</a></li>
+      </ul>
     </div>
   </div>
 </section>

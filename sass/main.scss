@@ -87,6 +87,9 @@ a {
 body {
   background: $brand-dark;
 }
+.uppercase {
+  text-decoration: uppercase;
+}
 .header {
   background: transparent;
   position: fixed;
@@ -492,3 +495,32 @@ a:focus {
   outline: 0 auto -webkit-focus-ring-color;
   outline-offset: -0px;
 }
+.link-made {
+  padding-left: 30px;
+  a,
+  li {
+    font-size: 20px;
+    color: $brand-text-color;
+    @include transition(all ease 300ms);
+    text-transform: uppercase;
+    font-family: $font-montserrat;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  a {
+    padding-right: 15px;
+    &:hover,
+    &:focus {
+      color: lighten($brand-text-color,10%);
+    }
+  }
+}
+.fancybox-image {
+    opacity: 1!important;
+}
+.fancybox-nav {
+    top: 50%;
+    @include transform(translateY(-50%));
+    height: 40%;
+  }
