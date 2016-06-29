@@ -108,6 +108,14 @@ body {
     }
   }
 }
+.btn:focus,
+.btn.focus,
+.btn:active:focus,
+.btn:active.focus,
+.btn.active:focus,
+.btn.active.focus {
+  outline: none;
+}
 .close-right {
   position: absolute;
   left: 130px;
@@ -517,10 +525,27 @@ a:focus {
   }
 }
 .fancybox-image {
-    opacity: 1!important;
+  opacity: 1!important;
 }
 .fancybox-nav {
-    top: 50%;
-    @include transform(translateY(-50%));
-    height: 40%;
+  top: 50%;
+  @include transform(translateY(-50%));
+  height: 40%;
+}
+.footer {
+  padding: 15px 0;
+  background: #5b5b5b;
+  p {
+    margin: 0;
+    color: #fff;
   }
+  a {
+    color: #fff;
+    @include transition(all ease 300ms);
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: darken(#fff, 20%);
+    }
+  }
+}

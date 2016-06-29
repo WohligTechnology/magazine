@@ -13,14 +13,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       one: "views/section/section1.html",
       six: "views/section/section6.html",
       seven: "views/section/section7.html",
-      eight: "views/section/section8.html"
+      eight: "views/section/section8.html",
+      footer: "views/footer.html"
     };
 
   })
   .controller('EditorialCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
     console.log("Testing Consoles");
-
     $scope.template = TemplateService.changecontent("editorial");
     $scope.menutitle = NavigationService.makeactive("Editorial");
     TemplateService.title = $scope.menutitle;
