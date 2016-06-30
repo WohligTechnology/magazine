@@ -33,7 +33,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       'img/editorial/5.png',
       'img/editorial/6.png',
       'img/editorial/7.png',
-      'img/editorial/8.png'
+      'img/editorial/8.png',
+      'img/editorial/9.png',
+      'img/editorial/10.png',
+      'img/editorial/11.png',
+      'img/editorial/12.png'
     ];
   })
   .controller('CelebritiesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -53,6 +57,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       'img/celebrities/6.png',
       'img/celebrities/7.png',
       'img/celebrities/8.png',
+      'img/celebrities/12.png',
+      'img/celebrities/13.png',
+      'img/celebrities/14.png',
+      'img/celebrities/15.png',
+      'img/celebrities/16.png',
+      'img/celebrities/17.png',
+      'img/celebrities/18.png'
       //'img/celebrities/9.png',
       //'img/celebrities/10.png'
     ];
