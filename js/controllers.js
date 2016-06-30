@@ -107,7 +107,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       '2m-Iy79cL-E',
       'nR0-029uB4E',
       'kgIs8B173KY',
-      'BGtgIchcGEM'
+      'BGtgIchcGEM',
+      'eMlK1eBQTzI'
     ];
   })
 
