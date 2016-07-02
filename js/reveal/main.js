@@ -224,3 +224,72 @@
 	window.Revealer = Revealer;
 
 })(window);
+
+
+
+
+var pages = [].slice.call(document.querySelectorAll('.pages > .page')),
+		currentPage = 0,
+		oldPage = 0,
+
+		revealerOpts = {
+				// the layers are the elements that move from the sides
+				nmbLayers: 1,
+				// bg color of each layer
+				bgcolor: ['#161616'],
+				// effect classname
+				effect: 'anim--effect-3',
+				onStart: function(direction) {},
+				onEnd: function(direction) {}
+		};
+revealer = new Revealer(revealerOpts);
+
+// triggers the effect by calling instance.reveal(direction, callbackTime, callbackFn)
+function reveal(goUp) {
+		var direction = "cornerbottomright";
+		if (goUp) {
+				direction = "cornertopleft";
+		}
+
+		if (goUp && currentPage == 0) {
+				direction = "bottom";
+		}
+		if (!goUp && currentPage == (pages.length - 2)) {
+				direction = "top";
+		}
+
+		var callbackTime = 750,
+				callbackFn = function() {
+						currentPage = $(".page").index($(".page--current"));
+
+						$(".page--current").removeClass("page--current");
+
+						if (goUp) {
+								direction = "cornertopleft";
+								var nextPage = --currentPage;
+								if (nextPage < 0) {
+										nextPage = pages.length - 1;
+
+								}
+						} else {
+								var nextPage = ++currentPage;
+								if (nextPage >= pages.length) {
+										nextPage = 0;
+								}
+						}
+
+						$(".page").eq(nextPage).addClass("page--current");
+				};
+
+		revealer.reveal(direction, callbackTime, callbackFn);
+}
+
+$('body').on('mousewheel', function(event) {
+		if (event.deltaY<0) {
+			reveal();
+		}
+		else
+		{
+			reveal(true);
+		}
+});
