@@ -1,19 +1,82 @@
-<div class="home">
-  <!-- <section ng-mouse-wheel-down="scrollUpOne()" class="section one {{oneClass}}" id="landing" ng-include="section.one"></section>
-  <a ui-sref="editorial"><section ng-mouse-wheel-down="scrollDownTwo()" ng-mouse-wheel-up="scrollDownOne()" class="section two {{twoClass}}" id="editorials"></section></a>
-  <a ui-sref="tvc"><section ng-mouse-wheel-down="scrollDownThree()" ng-mouse-wheel-up="scrollUpThree()" class="section three {{threeClass}}" id="tvc"></section></a>
-  <a ui-sref="celebrities"><section ng-mouse-wheel-down="scrollDownFour()" ng-mouse-wheel-up="scrollUpFour()" class="section four {{fourClass}}" id="celebrities"></section></a>
-  <a ui-sref="designers"><section ng-mouse-wheel-down="scrollDownFive()" ng-mouse-wheel-up="scrollUpFive()" class="section five {{fiveClass}}" id="designers"></section></a>
-  <section ng-mouse-wheel-down="scrollDownSix()" ng-mouse-wheel-up="scrollUpSix()" class="section six light-gray-bg {{sixClass}}" id="about" ng-include="section.six"></section>
-  <!- <section class="section seven dark-gray-bg" id="work" ng-include="section.seven"></section> ->
-  <section class="section eight white-bg {{eightClass}}" id="contact" ng-include="section.eight"></section> -->
-
-  <section class="section one" ng-mouse-wheel-down="reveal('down')" id="landing" ng-include="section.one"></section>
-  <a ui-sref="editorial"><section class="section two" id="editorials"></section></a>
-  <a ui-sref="tvc"><section class="section three" id="tvc"></section></a>
-  <a ui-sref="celebrities"><section class="section four" id="celebrities"></section></a>
-  <a ui-sref="designers"><section class="section five" id="designers"></section></a>
-  <section class="section six light-gray-bg" id="about" ng-include="section.six"></section>
-  <!-- <section class="section seven dark-gray-bg" id="work" ng-include="section.seven"></section> -->
-  <section class="section eight white-bg" id="contact" ng-include="section.eight"></section>
+<div class="home pages">
+    <section class="section one page page--current" id="landing" ng-include="section.one" auto-height></section>
+    <section class="section two page" id="editorials" auto-height></section>
+    <section class="section three page" id="tvc" auto-height></section>
+    <section class="section four page" id="celebrities" auto-height></section>
+    <section class="section five page" id="designers" auto-height></section>
+    <section class="section six light-gray-bg page" id="about" ng-include="section.six" auto-height></section>
+    <!-- <section class="section seven dark-gray-bg" id="work" ng-include="section.seven" auto-height></section> -->
+    <section class="section eight white-bg page" id="contact" ng-include="section.eight" auto-height></section>
 </div>
+
+<script src="js/reveal/classie.js"></script>
+<script src="js/reveal/main.js"></script>
+
+<script type="text/javascript">
+
+    var pages = [].slice.call(document.querySelectorAll('.pages > .page')),
+        currentPage = 0,
+        oldPage = 0,
+
+        revealerOpts = {
+            // the layers are the elements that move from the sides
+            nmbLayers: 1,
+            // bg color of each layer
+            bgcolor: ['#161616'],
+            // effect classname
+            effect: 'anim--effect-3',
+            onStart: function(direction) {},
+            onEnd: function(direction) {}
+        };
+    revealer = new Revealer(revealerOpts);
+
+    // triggers the effect by calling instance.reveal(direction, callbackTime, callbackFn)
+    function reveal(goUp) {
+        var direction = "cornerbottomright";
+        if (goUp) {
+            direction = "cornertopleft";
+        }
+
+        if (goUp && currentPage == 0) {
+            direction = "bottom";
+        }
+        if (!goUp && currentPage == (pages.length - 2)) {
+            direction = "top";
+        }
+
+        var callbackTime = 750,
+            callbackFn = function() {
+                currentPage = $(".page").index($(".page--current"));
+
+                $(".page--current").removeClass("page--current");
+
+                if (goUp) {
+                    direction = "cornertopleft";
+                    var nextPage = --currentPage;
+                    if (nextPage < 0) {
+                        nextPage = pages.length - 1;
+
+                    }
+                } else {
+                    var nextPage = ++currentPage;
+                    if (nextPage >= pages.length) {
+                        nextPage = 0;
+                    }
+                }
+
+                $(".page").eq(nextPage).addClass("page--current");
+            };
+
+        revealer.reveal(direction, callbackTime, callbackFn);
+    }
+
+    $('body').on('mousewheel', function(event) {
+        if (event.deltaY<0) {
+          reveal();
+        }
+        else
+        {
+          reveal(true);
+        }
+    });
+</script>
