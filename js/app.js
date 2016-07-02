@@ -1,3 +1,4 @@
+var globalFunc = {};
 // JavaScript Document
 var firstapp = angular.module('firstapp', [
   'ui.router',
@@ -88,6 +89,59 @@ firstapp.directive('fancyboxBox', function($document) {
   };
 });
 
+firstapp.directive("scroll", function ($window) {
+  return function(scope, element, attrs) {
+    angular.element($window).bind("scroll", function() {
+      scope.$apply();
+    });
+  };
+});
+
+firstapp.directive('ngMouseWheelUp', function() {
+  return function(scope, element, attrs) {
+    element.bind("DOMMouseScroll mousewheel onmousewheel", function(event) {
+      // cross-browser wheel delta
+      event = window.event || event; // old IE support
+      var delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
+
+      if(delta > 0) {
+        scope.$apply(function(){
+          scope.$eval(attrs.ngMouseWheelUp);
+        });
+
+        // for IE
+        event.returnValue = false;
+        // for Chrome and Firefox
+        if(event.preventDefault) {
+          event.preventDefault();
+        }
+      }
+    });
+  };
+});
+
+firstapp.directive('ngMouseWheelDown', function() {
+  return function(scope, element, attrs) {
+    element.bind("DOMMouseScroll mousewheel onmousewheel", function(event) {
+      // cross-browser wheel delta
+      event = window.event || event; // old IE support
+      var delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
+
+      if(delta < 0) {
+        scope.$apply(function(){
+          scope.$eval(attrs.ngMouseWheelDown);
+        });
+
+        // for IE
+        event.returnValue = false;
+        // for Chrome and Firefox
+        if(event.preventDefault)  {
+          event.preventDefault();
+        }
+      }
+    });
+  };
+});
 
 firstapp.config(function($translateProvider) {
   $translateProvider.translations('en', LanguageEnglish);

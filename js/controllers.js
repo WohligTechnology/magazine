@@ -17,6 +17,74 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       footer: "views/footer.html"
     };
 
+    $scope.oneClass = "";
+    $scope.twoClass = "";
+    $scope.threeClass = "";
+    $scope.fourClass = "";
+    $scope.fiveClass = "";
+    $scope.sixClass = "";
+    $scope.eightClass = "";
+
+    $scope.scrollUpOne = function() {
+      if($scope.oneClass === "") $scope.oneClass = "leftUp";
+      else $scope.oneClass = "";
+    };
+    $scope.scrollUpTwo = function() {
+      if($scope.twoClass === "") $scope.twoClass = "leftUp";
+      else $scope.twoClass = "";
+    };
+    $scope.scrollUpThree = function() {
+      if($scope.threeClass === "") $scope.threeClass = "leftUp";
+      else $scope.threeClass = "";
+    };
+    $scope.scrollUpFour = function() {
+      if($scope.fourClass === "") $scope.fourClass = "leftUp";
+      else $scope.fourClass = "";
+    };
+    $scope.scrollUpFive = function() {
+      if($scope.fiveClass === "") $scope.fiveClass = "leftUp";
+      else $scope.fiveClass = "";
+    };
+    $scope.scrollUpSix = function() {
+      if($scope.sixClass === "") $scope.sixClass = "leftUp";
+      else $scope.sixClass = "";
+    };
+    $scope.scrollUpEight = function() {
+      if($scope.eightClass === "") $scope.eightClass = "leftUp";
+      else $scope.eightClass = "";
+    };
+
+    $scope.scrollDownOne = function() {
+      if($scope.oneClass === "") $scope.oneClass = "rightDown";
+      else $scope.oneClass = "";
+    };
+    $scope.scrollDownTwo = function() {
+      if($scope.twoClass === "") $scope.twoClass = "rightDown";
+      else $scope.twoClass = "";
+    };
+    $scope.scrollDownThree = function() {
+      if($scope.threeClass === "") $scope.threeClass = "rightDown";
+      else $scope.threeClass = "";
+    };
+    $scope.scrollDownFour = function() {
+      if($scope.fourClass === "") $scope.fourClass = "rightDown";
+      else $scope.fourClass = "";
+    };
+    $scope.scrollDownFive = function() {
+      if($scope.fiveClass === "") $scope.fiveClass = "rightDown";
+      else $scope.fiveClass = "";
+    };
+    $scope.scrollDownSix = function() {
+      if($scope.sixClass === "") $scope.sixClass = "rightDown";
+      else $scope.sixClass = "";
+    };
+    $scope.scrollDownEight = function() {
+      if($scope.eightClass === "") $scope.eightClass = "rightDown";
+      else $scope.eightClass = "";
+    };
+
+    $scope.reveal = globalFunc.reveal;
+
   })
   .controller('EditorialCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -124,7 +192,56 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.getslide = "menu-in";
         $scope.hideclick = "hideclick";
       }
+    };
+    Revealer.prototype.options = {
+    	nmbLayers : 1,
+    	bgcolor : '#fff',
+    	// effect classname
+    	effect : 'anim--effect-1',
+    	// callback
+    	onStart : function(direction) { return false; },
+    	onEnd : function(direction) { return false; }
+    };
+    var effectCtrl = document.getElementById('select-effect');
+    //effectCtrl.addEventListener('change', changeEffect);
+    // force it to be the first opt as default
+    //effectCtrl.value = 'effect-3';
+
+    function changeEffect() {
+      // revealer.destroy();
+      // var revealerOpts = {
+      //   // the layers are the elements that move from the sides
+      //   nmbLayers : 1,
+      //   // bg color of each layer
+      //   bgcolor : '#874',
+      //   // effect classname
+      //   effect : 'anim--effect-1',
+      //   onStart : function(direction) {
+      //     // next page gets class page--animate-[direction]
+      //     var nextPage = pages[currentPage === 0 ? 1 : 0];
+      //     classie.add(nextPage, 'page--animate-' + 'down');
+      //     $(nextPage).addClass = 'page--animate-down';
+      //   },
+      //   onEnd : function(direction) {
+      //     //remove class page--animate-[direction] from next page
+      //     var nextPage = pages[currentPage === 0 ? 1 : 0];
+      //     nextPage.className = 'page';
+      //   }
+      // };
+      // var revealer = new Revealer();
     }
+    globalFunc.reveal = function (direction) {
+      changeEffect();
+      console.log("qoqow[pq]");
+      var callbackTime = 750,
+        callbackFn = function() {
+          classie.remove(0, 'page--current');
+          currentPage = currentPage === 0 ? 1 : 0;
+          classie.add(0, 'page--current');
+        };
+      //revealer.reveal(direction, callbackTime, callbackFn);
+    };
+
   })
   .controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {
 

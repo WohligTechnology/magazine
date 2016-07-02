@@ -1,5 +1,14 @@
 <div class="home">
-  <section class="section one" id="landing" ng-include="section.one"></section>
+  <!-- <section ng-mouse-wheel-down="scrollUpOne()" class="section one {{oneClass}}" id="landing" ng-include="section.one"></section>
+  <a ui-sref="editorial"><section ng-mouse-wheel-down="scrollDownTwo()" ng-mouse-wheel-up="scrollDownOne()" class="section two {{twoClass}}" id="editorials"></section></a>
+  <a ui-sref="tvc"><section ng-mouse-wheel-down="scrollDownThree()" ng-mouse-wheel-up="scrollUpThree()" class="section three {{threeClass}}" id="tvc"></section></a>
+  <a ui-sref="celebrities"><section ng-mouse-wheel-down="scrollDownFour()" ng-mouse-wheel-up="scrollUpFour()" class="section four {{fourClass}}" id="celebrities"></section></a>
+  <a ui-sref="designers"><section ng-mouse-wheel-down="scrollDownFive()" ng-mouse-wheel-up="scrollUpFive()" class="section five {{fiveClass}}" id="designers"></section></a>
+  <section ng-mouse-wheel-down="scrollDownSix()" ng-mouse-wheel-up="scrollUpSix()" class="section six light-gray-bg {{sixClass}}" id="about" ng-include="section.six"></section>
+  <!- <section class="section seven dark-gray-bg" id="work" ng-include="section.seven"></section> ->
+  <section class="section eight white-bg {{eightClass}}" id="contact" ng-include="section.eight"></section> -->
+
+  <section class="section one" ng-mouse-wheel-down="reveal('down')" id="landing" ng-include="section.one"></section>
   <a ui-sref="editorial"><section class="section two" id="editorials"></section></a>
   <a ui-sref="tvc"><section class="section three" id="tvc"></section></a>
   <a ui-sref="celebrities"><section class="section four" id="celebrities"></section></a>

@@ -284,7 +284,7 @@ gulp.task('connect:html', function() {
         .pipe(connect.reload());
 });
 gulp.task('connect:js', function() {
-    gulp.src('./js/*.js')
+    gulp.src(['./js/*.js', './js/*/*.js'])
         .pipe(connect.reload());
 });
 gulp.task('watch:all', function() {
