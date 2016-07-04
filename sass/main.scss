@@ -560,15 +560,18 @@ a:focus {
   min-height: 700px;
   height: calc(100vh - 50px);
 }
-.designer-option select {
-  width: 200px;
-  height: 40px;
-  margin: 5px 10px;
-  background-color: #151515;
-  color: #717171;
-  font-size: 16px;
-  border: 3px solid #2f2f2f;
-  &:focus { outline: none; }
+.designer-option {
+  margin-top: -85px;
+  select {
+    width: 200px;
+    height: 40px;
+    margin: 5px 10px;
+    background-color: #151515;
+    color: #717171;
+    font-size: 16px;
+    border: 3px solid #2f2f2f;
+    &:focus { outline: none; }
+  }
 }
 
 

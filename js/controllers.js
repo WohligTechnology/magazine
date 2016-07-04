@@ -484,8 +484,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.editorials = [
             'img/editorial/1.png',
             'img/editorial/2.png',
-            'img/editorial/3.png',
-            'img/editorial/4.png',
+            //'img/editorial/3.png',
+            //'img/editorial/4.png',
             'img/editorial/5.png',
             'img/editorial/6.png',
             'img/editorial/7.png',
