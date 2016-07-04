@@ -560,37 +560,16 @@ a:focus {
   min-height: 700px;
   height: calc(100vh - 50px);
 }
-
-.leftUp {
-  transform: translate(-100%, -100%);
-  transition: all 2s ease;
+.designer-option select {
+  width: 200px;
+  height: 40px;
+  margin: 5px 10px;
+  background-color: #151515;
+  color: #717171;
+  font-size: 16px;
+  border: 3px solid #2f2f2f;
+  &:focus { outline: none; }
 }
-.rightDown {
-  transform: translate(100%, 100%);
-  transition: all 2s ease;
-}
-
-@keyframes leftUp {
-    0% { top: 0%; left: 0%; }
-    100% { top: -100%; left: -100%; }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

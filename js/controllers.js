@@ -531,8 +531,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("designers");
         $scope.menutitle = NavigationService.makeactive("Designers");
         TemplateService.title = $scope.menutitle;
+        $scope.select = {};
+        $scope.des={};
+        $scope.des.designs = [];
         $scope.navigation = NavigationService.getnav();
-        $scope.designers = [
+        $scope.designers = [{
+          name: "gavin",
+          "images": [
             'img/designers/1.png',
             'img/designers/2.png',
             'img/designers/3.png',
@@ -542,13 +547,40 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             'img/designers/7.png',
             'img/designers/8.png',
             'img/designers/9.png',
-            'img/designers/10.png',
+            'img/designers/10.png'
+          ]},
+        {
+          name: "angeinx",
+          images: [
             'img/celebrities/1.png',
             'img/celebrities/2.png',
             'img/celebrities/9.png',
             'img/celebrities/10.png',
             'img/celebrities/11.png'
-        ];
+          ]
+        }];
+
+        _.each($scope.designers, function (key) {
+          $scope.des.designs =$scope.des.designs.concat(key.images);
+        });
+
+        $scope.getDesigns = function (designer) {
+          $scope.des.designs = [];
+          setTimeout(function () {
+            if(designer == "all") {
+              _.each($scope.designers, function (key) {
+                $scope.des.designs =$scope.des.designs.concat(key.images);
+              });
+            } else {
+              $scope.des.designs= _.find($scope.designers,function (key) {
+                return key.name == designer;
+              }).images;
+            }
+            $scope.$apply();
+          }, 10);
+
+        };
+
     })
     .controller('TvcCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
