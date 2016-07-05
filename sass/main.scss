@@ -249,7 +249,7 @@ body {
 	  flex-direction: column;
   }
   .one {
-    @include background( '../img/home/01.jpg');
+    @include background( '../img/home/01.gif');
     z-index: 9;
   }
   // landing
@@ -555,6 +555,12 @@ a:focus {
       color: darken(#fff, 20%);
     }
   }
+}
+.menu-logo {
+  width: 250px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
 }
 .editorial {
   min-height: 700px;
