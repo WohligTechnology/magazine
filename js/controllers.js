@@ -378,11 +378,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           								var nextPage = --currentPage;
           								if (nextPage < 0) {
           										nextPage = pages.length - 1;
-
           								}
           						} else {
           								var nextPage = ++currentPage;
-          								if (nextPage >= pages.length) {
+          								if (nextPage < pages.length) {
           										nextPage = 0;
           								}
           						}
