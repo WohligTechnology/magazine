@@ -22,6 +22,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.$on('$viewContentLoaded', function(event) {
       $timeout(function() {
         $(function() { // wait for document ready
+          var controller = new ScrollMagic.Controller();
+          controller.scrollTo(function(newpos) {
+            TweenMax.to(window, 0.5, {
+              scrollTo: {
+                y: newpos
+              }
+            });
+          });
           // define movement of panels
           var wipeAnimation = new TimelineMax()
             .fromTo("section.two", 1, {
@@ -84,19 +92,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // .addIndicators()
             .addTo(controller);
           cont = controller;
+
+
+          controller.scrollTo("#about");
+          controller.scrollTo("about");
         });
 
 
       }, 100);
       // init
-      var controller = new ScrollMagic.Controller();
-      controller.scrollTo(function(newpos) {
-        TweenMax.to(window, 0.5, {
-          scrollTo: {
-            y: newpos
-          }
-        });
-      });
+
     });
 
   })
