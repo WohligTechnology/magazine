@@ -1,3 +1,4 @@
+var cont = {};
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -23,7 +24,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $(function() { // wait for document ready
           // init
           var controller = new ScrollMagic.Controller();
-
+          controller.scrollTo(function (newpos) {
+          		TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
+          	});
           // define movement of panels
           var wipeAnimation = new TimelineMax()
             .fromTo("section.two", 1, {
@@ -85,6 +88,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             .setTween(wipeAnimation)
             // .addIndicators()
             .addTo(controller);
+            cont = controller;
         });
 
 
