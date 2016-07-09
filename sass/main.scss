@@ -732,3 +732,16 @@ body {
 a.menu-logo.text-center img {
     height: 65px;
 }
+section.editorial {
+    min-height: 650px;
+}
+#pinContainer {
+  width: 100% !important;
+  height:  100% !important;
+  overflow: hidden !important;
+}
+.panel1 {
+  height: 100% !important;
+  width: 100% !important;
+  position: absolute !important;
+}
