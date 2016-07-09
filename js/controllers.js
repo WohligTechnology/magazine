@@ -17,6 +17,80 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       footer: "views/footer.html"
     };
 
+
+    $scope.$on('$viewContentLoaded', function(event) {
+      $timeout(function() {
+        $(function() { // wait for document ready
+          // init
+          var controller = new ScrollMagic.Controller();
+
+          // define movement of panels
+          var wipeAnimation = new TimelineMax()
+            .fromTo("section.two", 1, {
+              x: "-100%"
+            }, {
+              x: "0%",
+              ease: Linear.easeNone
+            }) // in from left
+            .fromTo("section.three", 1, {
+              x: "100%"
+            }, {
+              x: "0%",
+              ease: Linear.easeNone
+            }) // in from right
+            .fromTo("section.four", 1, {
+              y: "-100%"
+            }, {
+              y: "0%",
+              ease: Linear.easeNone
+            })
+            .fromTo("section.five", 1, {
+              x: "-100%"
+            }, {
+              x: "0%",
+              ease: Linear.easeNone
+            }) // in from left
+            .fromTo("section.six", 1, {
+              x: "100%"
+            }, {
+              x: "0%",
+              ease: Linear.easeNone
+            }) // in from right
+            .fromTo("section.eight", 1, {
+              y: "-100%"
+            }, {
+              y: "0%",
+              ease: Linear.easeNone
+            })
+            .fromTo("section.nine", 1, {
+              x: "-100%"
+            }, {
+              x: "0%",
+              ease: Linear.easeNone
+            }) // in from left
+            .fromTo("section.ten", 1, {
+              x: "100%"
+            }, {
+              x: "0%",
+              ease: Linear.easeNone
+            }); // in from top
+
+          // create scene to pin and link animation
+          new ScrollMagic.Scene({
+              triggerElement: "#pinContainer",
+              triggerHook: "onLeave",
+              duration: "500%"
+            })
+            .setPin("#pinContainer")
+            .setTween(wipeAnimation)
+            // .addIndicators()
+            .addTo(controller);
+        });
+
+
+      }, 1000);
+    });
+
   })
   .controller('EditorialCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file

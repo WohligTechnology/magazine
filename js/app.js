@@ -46,45 +46,45 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
   $locationProvider.html5Mode(isproduction);
 });
 
-firstapp.directive('ngScrollDuration', function($compile, $parse) {
-  return {
-    restrict: 'EA',
-    replace: false,
-    link: function($scope, element, attrs) {
-      var $element = $(element);
-      var animation = {};
-      console.log("NGSCROLL", attrs);
-      var animationSceneFrom = eval("(" + attrs.ngScrollAnimationFrom + ")");
-      var animationSceneTo = eval("(" + attrs.ngScrollAnimationTo + ")");
-      var id = attrs.id;
-      var pin = attrs.pin;
-      var toggleClass = attrs.toggleClass;
-      if (attrs.ngScrollTrigger) {
-        animation.triggerElement = attrs.pin;
-      }
-      animation.duration = attrs.ngScrollDuration * ZoomValue;
-      animation.offset = attrs.ngScrollOffset * ZoomValue;
-      // build twee
-      var wipeAnimation = TweenMax.fromTo($element, 1, animationSceneFrom, animationSceneTo);
-
-      // build scene
-      if (pin) {
-        var scene = new ScrollMagic.Scene(animation)
-          .setTween(wipeAnimation )
-          .setPin(pin, {
-            pushFollowers: false
-          })
-          .addIndicators() // add indicators (requires plugin)
-          .addTo(controller);
-      } else {
-        var scene = new ScrollMagic.Scene(animation)
-          .setTween(wipeAnimation)
-          .addIndicators() // add indicators (requires plugin)
-          .addTo(controller);
-      }
-    }
-  };
-});
+// firstapp.directive('ngScrollDuration', function($compile, $parse) {
+//   return {
+//     restrict: 'EA',
+//     replace: false,
+//     link: function($scope, element, attrs) {
+//       var $element = $(element);
+//       var animation = {};
+//       console.log("NGSCROLL", attrs);
+//       var animationSceneFrom = eval("(" + attrs.ngScrollAnimationFrom + ")");
+//       var animationSceneTo = eval("(" + attrs.ngScrollAnimationTo + ")");
+//       var id = attrs.id;
+//       var pin = attrs.pin;
+//       var toggleClass = attrs.toggleClass;
+//       if (attrs.ngScrollTrigger) {
+//         animation.triggerElement = attrs.pin;
+//       }
+//       animation.duration = attrs.ngScrollDuration * ZoomValue;
+//       animation.offset = attrs.ngScrollOffset * ZoomValue;
+//       // build twee
+//       var wipeAnimation = TweenMax.fromTo($element, 1, animationSceneFrom, animationSceneTo);
+//
+//       // build scene
+//       if (pin) {
+//         var scene = new ScrollMagic.Scene(animation)
+//           .setTween(wipeAnimation )
+//           .setPin(pin, {
+//             pushFollowers: false
+//           })
+//           .addIndicators() // add indicators (requires plugin)
+//           .addTo(controller);
+//       } else {
+//         var scene = new ScrollMagic.Scene(animation)
+//           .setTween(wipeAnimation)
+//           .addIndicators() // add indicators (requires plugin)
+//           .addTo(controller);
+//       }
+//     }
+//   };
+// });
 
 // var wipeAnimation = new TimelineMax().fromTo("section.two", 1, {x: "-100%"}, {x: "0%",ease: Linear.easeNone}) // in from left
 // .fromTo("section.three", 1, {x: "100%"}, {x: "0%",ease: Linear.easeNone}) // in from right

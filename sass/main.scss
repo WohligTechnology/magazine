@@ -233,44 +233,42 @@ body {
   @include transform(translate(-50%, -50%));
 }
 .home {
-  .eight,
-  .five,
-  .four,
-  .one,
-  .seven,
-  .six,
-  .three,
-  .two {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-  }
   .one {
     @include background( '../img/home/01.jpg');
+    z-index: 10;
   }
   // landing
   .two {
     @include background( '../img/home/02.jpg');
+    z-index: 20;
   }
   // editorials
   .three {
     @include background( '../img/home/03.jpg');
+    z-index: 30;
   }
   // tvc
   .four {
     @include background( '../img/home/04.jpg');
+    z-index: 40;
   }
   // celebrities
   .five {
     @include background( '../img/home/05.jpg');
+    z-index: 50;
   }
   // designers
-  .six {}
+  .six {
+    z-index: 60;
+  }
   // about
-  .seven {}
+  .seven {
+    z-index: 70;
+  }
   // work
-  .eight {}
+  .eight {
+    z-index: 80;
+  }
   // contact
   .landing {
     .mouse-image {
@@ -549,14 +547,13 @@ a:focus {
     }
   }
 }
-
 #pinContainer {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  width: 100% !important;
+  height:  100% !important;
+  overflow: hidden !important;
 }
-.panel-scroll {
-  height: 100%;
-  width: 100%;
-  position: absolute;
+.panel1 {
+  height: 100% !important;
+  width: 100% !important;
+  position: absolute !important;
 }
