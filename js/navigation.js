@@ -25,10 +25,6 @@ var navigationservice = angular.module('navigationservice', [])
     classis: "active",
     anchor: "designers",
   }, {
-    name: "About",
-    classis: "active",
-    anchor: "about",
-  }, {
     name: "Contact",
     classis: "active",
     anchor: "contact",

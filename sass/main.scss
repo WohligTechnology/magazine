@@ -233,51 +233,51 @@ body {
   @include transform(translate(-50%, -50%));
 }
 .home {
-  .eight,
-  .five,
-  .four,
-  .one,
-  .seven,
-  .six,
-  .three,
-  .two {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-	  flex-direction: column;
-  }
+  // .eight,
+  // .five,
+  // .four,
+  // .one,
+  // .seven,
+  // .six,
+  // .three,
+  // .two {
+  //   width: 100%;
+  //   height: 100vh;
+  //   position: relative;
+  //   overflow: hidden;
+  //   display: flex;
+	//   flex-direction: column;
+  // }
   .one {
     @include background( '../img/home/01.gif');
-    z-index: 9;
+    z-index: 10;
   }
   // landing
   .two {
     @include background( '../img/home/02.jpg');
-    z-index: 8;
+    z-index: 20;
   }
   // editorials
   .three {
     @include background( '../img/home/03.jpg');
-    z-index: 7;
+    z-index: 30;
   }
   // tvc
   .four {
     @include background( '../img/home/04.jpg');
-    z-index: 6;
+    z-index: 40;
   }
   // celebrities
   .five {
     @include background( '../img/home/05.jpg');
-    z-index: 5;
+    z-index: 50;
   }
   // designers
-  .six { z-index: 4; }
+  .six { z-index: 60; }
   // about
-  .seven { z-index: 3; }
+  // .seven { z-index: 70; }
   // work
-  .eight { z-index: 2; }
+  .eight { z-index: 70; }
   // contact
   .landing {
     .mouse-image {
