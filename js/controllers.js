@@ -1,8 +1,8 @@
 var scrollHei = 0;
 
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider'])
-
-.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'duScroll'])
+    .value('duScrollDuration', 2000)
+    .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $document) {
         //Used to name the .html file
         console.log("Testing Consoles");
 
@@ -20,100 +20,126 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             footer: "views/footer.html"
         };
 
-            $scope.$on('$viewContentLoaded', function(event) {
-              $timeout(function() {
+        $scope.$on('$viewContentLoaded', function(event) {
+            $timeout(function() {
                 $(function() { // wait for document ready
-                  var controller = new ScrollMagic.Controller();
+                    var controller = new ScrollMagic.Controller();
 
-                  controller.scrollTo(function(newpos) {
-                    TweenMax.to(window, 0.5, {
-                      scrollTo: {
-                        y: newpos
-                      }
+                    controller.scrollTo(function(newpos) {
+                        TweenMax.to(window, 0.5, {
+                            scrollTo: {
+                                y: newpos
+                            }
+                        });
                     });
-                  });
 
-                  // define movement of panels
-                  var wipeAnimation = new TimelineMax()
-                    .fromTo("section.two", 1, {
-                      x: "-100%"
-                    }, {
-                      x: "0%",
-                      ease: Linear.easeNone
-                    }) // in from left
-                    .fromTo("section.three", 1, {
-                      x: "100%"
-                    }, {
-                      x: "0%",
-                      ease: Linear.easeNone
-                    }) // in from right
-                    .fromTo("section.four", 1, {
-                      y: "-100%"
-                    }, {
-                      y: "0%",
-                      ease: Linear.easeNone
-                    })
-                    .fromTo("section.five", 1, {
-                      x: "-100%"
-                    }, {
-                      x: "0%",
-                      ease: Linear.easeNone
-                    }) // in from left
-                    .fromTo("section.six", 1, {
-                      x: "100%"
-                    }, {
-                      x: "0%",
-                      ease: Linear.easeNone
-                    }) // in from right
-                    .fromTo("section.eight", 1, {
-                      y: "-100%"
-                    }, {
-                      y: "0%",
-                      ease: Linear.easeNone
-                    })
-                    .fromTo("section.nine", 1, {
-                      x: "-100%"
-                    }, {
-                      x: "0%",
-                      ease: Linear.easeNone
-                    }) // in from left
-                    .fromTo("section.ten", 1, {
-                      x: "100%"
-                    }, {
-                      x: "0%",
-                      ease: Linear.easeNone
-                    }); // in from top
+                    // define movement of panels
+                    var wipeAnimation = new TimelineMax()
+                        .fromTo("section.two", 1, {
+                            x: "-100%"
+                        }, {
+                            x: "0%",
+                            ease: Linear.easeNone
+                        }) // in from left
+                        .fromTo("section.three", 1, {
+                            x: "100%"
+                        }, {
+                            x: "0%",
+                            ease: Linear.easeNone
+                        }) // in from right
+                        .fromTo("section.four", 1, {
+                            y: "-100%"
+                        }, {
+                            y: "0%",
+                            ease: Linear.easeNone
+                        })
+                        .fromTo("section.five", 1, {
+                            x: "-100%"
+                        }, {
+                            x: "0%",
+                            ease: Linear.easeNone
+                        }) // in from left
+                        .fromTo("section.six", 1, {
+                            x: "100%"
+                        }, {
+                            x: "0%",
+                            ease: Linear.easeNone
+                        }) // in from right
+                        .fromTo("section.eight", 1, {
+                            y: "-100%"
+                        }, {
+                            y: "0%",
+                            ease: Linear.easeNone
+                        })
+                        .fromTo("section.nine", 1, {
+                            x: "-100%"
+                        }, {
+                            x: "0%",
+                            ease: Linear.easeNone
+                        }) // in from left
+                        .fromTo("section.ten", 1, {
+                            x: "100%"
+                        }, {
+                            x: "0%",
+                            ease: Linear.easeNone
+                        }); // in from top
 
-                  // create scene to pin and link animation
-                  new ScrollMagic.Scene({
-                      triggerElement: "#pinContainer",
-                      triggerHook: "onLeave",
-                      duration: "500%"
-                    })
-                    .setPin("#pinContainer")
-                    .setTween(wipeAnimation)
-                    // .addIndicators()
-                    .addTo(controller);
-                  globalFunc.cont = controller;
+                    // create scene to pin and link animation
+                    new ScrollMagic.Scene({
+                            triggerElement: "#pinContainer",
+                            triggerHook: "onLeave",
+                            duration: "500%"
+                        })
+                        .setPin("#pinContainer")
+                        .setTween(wipeAnimation)
+                        // .addIndicators()
+                        .addTo(controller);
+                    globalFunc.cont = controller;
 
-                  scrollHei = $(window).height()/1.6;
+                    scrollHei = $(window).height() / 1.6;
 
-                  if($stateParams.isContact)
-                  {
-                    $(window).scrollTop(scrollHei*6);
-                  }
-                  if($stateParams.isAbout)
-                  {
-                    $(window).scrollTop(scrollHei*5);
-                  }
+                    if ($stateParams.isContact) {
+                        // $(window).scrollTop(scrollHei * 6);
+                        $document.scrollTopAnimated(scrollHei * 6).then(function() {
+                            console.log('Scrolled');
+                        });
+                    }
+                    if ($stateParams.isAbout) {
+                        // $(window).scrollTop(scrollHei * 5);
+                        $document.scrollTopAnimated(scrollHei * 5).then(function() {
+                            console.log('Scrolled');
+                        });
+                    }
+
+                    $(".menucontact").click(function() {
+                      //  e.preventDefault();
+                        globalFunc.getnav();
+                        $scope.$apply();
+                        $document.scrollTopAnimated(scrollHei * 6).then(function() {
+                            console.log('Scrolled');
+                        });
+
+                        return false;
+                    });
+
+                    $(".menuabout").click(function(e) {
+                    //    e.preventDefault();
+                        globalFunc.getnav();
+                        $scope.$apply();
+                        $document.scrollTopAnimated(scrollHei * 5).then(function() {
+                            console.log('Scrolled');
+                        });
+                        globalFunc.getnav();
+                        return false;
+                    });
 
                 });
 
 
-              }, 100);
-              // init
+            }, 100);
+            // init
 
-            });
+        });
 
     })
     .controller('EditorialCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -174,52 +200,52 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Designers");
         TemplateService.title = $scope.menutitle;
         $scope.select = {};
-        $scope.des={};
+        $scope.des = {};
         $scope.des.designs = [];
         $scope.navigation = NavigationService.getnav();
         $scope.designers = [{
-          name: "gavin",
-          "images": [
-            'img/designers/1.png',
-            'img/designers/2.png',
-            'img/designers/3.png',
-            'img/designers/4.png',
-            'img/designers/5.png',
-            'img/designers/6.png',
-            'img/designers/7.png',
-            'img/designers/8.png',
-            'img/designers/9.png',
-            'img/designers/10.png'
-          ]},
-        {
-          name: "angeinx",
-          images: [
-            'img/celebrities/1.png',
-            'img/celebrities/2.png',
-            'img/celebrities/9.png',
-            'img/celebrities/10.png',
-            'img/celebrities/11.png'
-          ]
+            name: "gavin",
+            "images": [
+                'img/designers/1.png',
+                'img/designers/2.png',
+                'img/designers/3.png',
+                'img/designers/4.png',
+                'img/designers/5.png',
+                'img/designers/6.png',
+                'img/designers/7.png',
+                'img/designers/8.png',
+                'img/designers/9.png',
+                'img/designers/10.png'
+            ]
+        }, {
+            name: "angeinx",
+            images: [
+                'img/celebrities/1.png',
+                'img/celebrities/2.png',
+                'img/celebrities/9.png',
+                'img/celebrities/10.png',
+                'img/celebrities/11.png'
+            ]
         }];
 
-        _.each($scope.designers, function (key) {
-          $scope.des.designs =$scope.des.designs.concat(key.images);
+        _.each($scope.designers, function(key) {
+            $scope.des.designs = $scope.des.designs.concat(key.images);
         });
 
-        $scope.getDesigns = function (designer) {
-          $scope.des.designs = [];
-          setTimeout(function () {
-            if(designer == "all") {
-              _.each($scope.designers, function (key) {
-                $scope.des.designs =$scope.des.designs.concat(key.images);
-              });
-            } else {
-              $scope.des.designs= _.find($scope.designers,function (key) {
-                return key.name == designer;
-              }).images;
-            }
-            $scope.$apply();
-          }, 10);
+        $scope.getDesigns = function(designer) {
+            $scope.des.designs = [];
+            setTimeout(function() {
+                if (designer == "all") {
+                    _.each($scope.designers, function(key) {
+                        $scope.des.designs = $scope.des.designs.concat(key.images);
+                    });
+                } else {
+                    $scope.des.designs = _.find($scope.designers, function(key) {
+                        return key.name == designer;
+                    }).images;
+                }
+                $scope.$apply();
+            }, 10);
 
         };
 
@@ -255,6 +281,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.hideclick = "hideclick";
             }
         };
+        globalFunc.getnav = $scope.getnav;
 
 
 
