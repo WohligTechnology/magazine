@@ -1,10 +1,20 @@
-<div class="home pages">
+<!-- <div class="home pages">
     <section class="section one page page--current" id="landing" ng-include="section.one" auto-height></section>
     <section class="section two page" id="editorials" auto-height></section>
     <section class="section three page" id="tvc" auto-height></section>
     <section class="section four page" id="celebrities" auto-height></section>
     <section class="section five page" id="designers" auto-height></section>
     <section class="section six light-gray-bg page" id="about" ng-include="section.six" auto-height></section>
-    <!-- <section class="section seven dark-gray-bg" id="work" ng-include="section.seven" auto-height></section> -->
+    <!-- <section class="section seven dark-gray-bg" id="work" ng-include="section.seven" auto-height></section>
     <section class="section eight white-bg page" id="contact" ng-include="section.eight" auto-height></section>
+</div> -->
+<div class="home">
+    <section class="section one" id="landing" ng-include="section.one" auto-height></section>
+    <a ui-sref="editorial"><section class="section two" id="editorials" auto-height></section></a>
+    <a ui-sref="tvc"><section class="section three" id="tvc" auto-height></section></a>
+    <a ui-sref="celebrities"><section class="section four" id="celebrities" auto-height></section></a>
+    <a ui-sref="designers"><section class="section five" id="designers" auto-height></section></a>
+    <section class="section six light-gray-bg" id="about" ng-include="section.six" auto-height></section>
+    <!-- <section class="section seven dark-gray-bg" id="work" ng-include="section.seven" auto-height></section> -->
+    <section class="section eight white-bg" id="contact" ng-include="section.eight" auto-height></section>
 </div>
