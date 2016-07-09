@@ -129,7 +129,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         $document.scrollTopAnimated(scrollHei * 5).then(function() {
                             console.log('Scrolled');
                         });
-                        globalFunc.getnav();
                         return false;
                     });
 
