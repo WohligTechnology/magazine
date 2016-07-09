@@ -1,6 +1,8 @@
+var scrollHei = 0;
+
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider'])
 
-.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout,$stateParams) {
         //Used to name the .html file
         console.log("Testing Consoles");
 
@@ -22,6 +24,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
               $timeout(function() {
                 $(function() { // wait for document ready
                   var controller = new ScrollMagic.Controller();
+
                   controller.scrollTo(function(newpos) {
                     TweenMax.to(window, 0.5, {
                       scrollTo: {
@@ -29,6 +32,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                       }
                     });
                   });
+
                   // define movement of panels
                   var wipeAnimation = new TimelineMax()
                     .fromTo("section.two", 1, {
@@ -90,11 +94,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     .setTween(wipeAnimation)
                     // .addIndicators()
                     .addTo(controller);
-                  cont = controller;
+                  globalFunc.cont = controller;
 
+                  scrollHei = $(window).height()/1.6;
 
-                  controller.scrollTo("#about");
-                  controller.scrollTo("about");
+                  if($stateParams.isContact)
+                  {
+                    $(window).scrollTop(scrollHei*6);
+                  }
+                  if($stateParams.isAbout)
+                  {
+                    $(window).scrollTop(scrollHei*5);
+                  }
+
                 });
 
 
