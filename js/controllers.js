@@ -92,7 +92,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
 
-      }, 1000);
+      }, 100);
     });
 
   })
