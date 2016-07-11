@@ -273,6 +273,7 @@ body {
     @include background( '../img/home/04.jpg');
     z-index: 40;
   }
+
   // celebrities
   .five {
     @include background( '../img/home/05.jpg');
@@ -317,6 +318,7 @@ body {
       margin-top: 40px;
       p {
         font-size: 13px;
+        text-align: justify;
       }
     }
   }
@@ -734,3 +736,4 @@ section.editorial {
   width: 100% !important;
   position: absolute !important;
 }
+@import "mobile";

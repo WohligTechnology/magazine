@@ -1,0 +1,106 @@
+@media screen and (max-width: 1200px) {
+  // @mixin background($url, $size: 100%) {
+  //   background-position: 50% 50%;
+  // }
+  .home {
+    .one,
+    .two,
+    .three,
+    .four,
+    .five {
+      background-position: 50% 50%;
+    }
+  }
+  .home {
+    .about {
+      h2 {
+        margin-top: 57px;
+        font-size: 150px;
+      }
+    }
+    .about-image {
+      margin-top: 70px;
+    }
+  }
+}
+@media (max-width: $screen-sm-max) {}
+@media (max-width: $screen-xs-max) {
+  .home {
+    .contact-details {
+      padding: 10px;
+      margin-bottom: 10px;
+      h4 {
+        position: relative;
+        font-size: 50px;
+        letter-spacing: 8px;
+        margin-top: 110px;
+      }
+    }
+    .contact-form {
+      padding: 10px;
+    }
+    .contact-form .form-group.form-inline {
+      height: 30px;
+    }
+    .form-group {
+      margin-bottom: 10px;
+    }
+    .contact-form input.form-control {
+      width: 80%;
+      height: 19px;
+    }
+    .contact-forms textarea {
+      height: 80px;
+      resize: none;
+    }
+    .about h2 {
+      position: relative;
+      left: 0;
+      font-size: 50px;
+      letter-spacing: 3px;
+      margin: 0;
+    }
+    .contact-form label {
+      font-size: 11px;
+    }
+    .about-image {
+      margin-top: 70px;
+      width: 100px;
+    }
+    .about-description {
+      margin-top: 10px !important;
+      p {
+        font-size: 10px!important;
+      }
+    }
+  }
+  .close-right {
+    left: 30px;
+    img {
+      width: 20px;
+    }
+  }
+  .menu-made ul li a {
+    font-size: 36px;
+  }
+  a.menu-logo.text-center img {
+    height: 40px;
+  }
+  .head-text h2 {
+    margin: 10px 0 -15px;
+    font-size: 60px;
+    letter-spacing: 5px;
+  }
+  .link-made {
+    padding-top: 20px;
+  }
+  ul.links {
+    li {
+      display: block;
+    }
+  }
+  .link-made a {
+    padding-right: 0;
+  }
+}
+@media (max-width: 480px) {}
