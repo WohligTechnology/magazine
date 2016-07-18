@@ -149,18 +149,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.editorials = [
-            'img/editorial/1.png',
-            'img/editorial/2.png',
-            //'img/editorial/3.png',
-            //'img/editorial/4.png',
-            'img/editorial/5.png',
-            'img/editorial/6.png',
-            'img/editorial/7.png',
-            'img/editorial/8.png',
+          'img/editorial/13.png',
+          'img/editorial/8.png',
             'img/editorial/9.png',
             'img/editorial/10.png',
             'img/editorial/11.png',
-            'img/editorial/12.png'
+            'img/editorial/12.png',
+              'img/editorial/1.png',
+              'img/editorial/2.png',
+              //'img/editorial/3.png',
+              //'img/editorial/4.png',
+              'img/editorial/5.png',
+              'img/editorial/6.png',
+              'img/editorial/7.png'
+
         ];
     })
     .controller('CelebritiesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -177,7 +179,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             'img/celebrities/3.png',
             'img/celebrities/4.png',
             'img/celebrities/5.png',
-            'img/celebrities/6.png',
+            // 'img/celebrities/6.png',
             'img/celebrities/7.png',
             'img/celebrities/8.png',
             'img/celebrities/12.png',
@@ -258,6 +260,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.tvcs = [
+            'PrOHbjhSLOE',
             'jM7nQCX9joE',
             '2m-Iy79cL-E',
             'nR0-029uB4E',
