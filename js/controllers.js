@@ -260,6 +260,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.tvcs = [
+            'iTIpWlZeHdg',
             'PrOHbjhSLOE',
             'jM7nQCX9joE',
             '2m-Iy79cL-E',
