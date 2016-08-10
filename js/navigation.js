@@ -9,22 +9,22 @@ var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function() {
   var navigation = [{
-    name: "Editorials",
-    classis: "active",
-    anchor: "editorial",
-  }, {
     name: "TVC'S",
     classis: "active",
     anchor: "tvc",
+  }, {
+    name: "Designers",
+    classis: "active",
+    anchor: "designers",
+  }, {
+    name: "Editorials",
+    classis: "active",
+    anchor: "editorial",
   }, {
     name: "Celebrities",
     classis: "active",
     anchor: "celebrities",
   }, {
-    name: "Designers",
-    classis: "active",
-    anchor: "designers",
-  },{
     name: "About",
     classis: "active",
     anchor: "about",
