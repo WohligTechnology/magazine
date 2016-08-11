@@ -1,60 +1,89 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="firstapp">
 
-<head ng-controller="headerctrl">
-    <meta charset="utf-8">
-    <!-- <base href="http://wohlig.co.in/angularframework/"> -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title ng-bind="'Florian | '+template.title">Florian</title>
+    <head ng-controller="headerctrl">
+        <meta charset="utf-8">
+        <!-- <base href="http://wohlig.co.in/angularframework/"> -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title ng-bind="'Florian | '+template.title">Florian</title>
 
-    <!-- SEO -->
-    <meta name="author" content="">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+        <!-- SEO -->
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
 
-    <!-- Facebook -->
-    <meta property="og:site_name" content="">
-    <meta property="og:title" content=""/>
-    <meta property="og:description" content=""/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:image" content="img/fb-banner.jpg">
+        <!-- Facebook -->
+        <meta property="og:site_name" content="">
+        <meta property="og:title" content=""/>
+        <meta property="og:description" content=""/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:image" content="img/fb-banner.jpg">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="img/tw-banner.jpg">
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="">
+        <meta name="twitter:title" content="">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="img/tw-banner.jpg">
 
-    <link rel="shortcut icon" href="img/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="w.css" />
-    <script>
-      var isproduction=false;
-    </script>
-    <script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
-    <script src="js/reveal/modernizr-custom.js"></script>
-    <script src="js/reveal/jquery.mousewheel.min.js"></script>
+        <link rel="shortcut icon" href="img/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="w.css"/>
+        <script>
+            var isproduction = false;
+        </script>
+        <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+        <script src="js/reveal/modernizr-custom.js"></script>
+        <script src="js/reveal/jquery.mousewheel.min.js"></script>
 
-    <script src="w.js"></script>
+        <script src="w.js"></script>
 
-    <!--[if IE]>
-        <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-</head>
+        <!--[if IE]> <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script> <![endif]-->
+    </head>
 
-<body>
+    <body>
 
-    <div class="repeated-item" ui-view></div>
-    <script>
-  	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    	ga('create', 'UA-77872125-3', { 'cookieDomain': 'none' });
-	  </script>
-</body>
+        <body>
+            <div class="repeated-item loadedContent" style="display:none;" ui-view></div>
+            <div class="loader" style="background:#161616;z-index:999;text-align: center;position:fixed;top:0;left:0;bottom:0;right:0"></div>
+            <!-- <div class="loader" style="background:#161616;z-index:999;text-align: center;position:fixed;top:0;left:0;bottom:0;right:0">
+                <div style="position: absolute ;top: 50%;left:50%;transform: translate(-50%,-50%);">
+                    <img src="img/loader.gif" alt="florian"/>
+                </div>
+            </div> -->
+            <div class="hidden">
+                <img src="img/home/01.gif" alt="Florian">
+                <img src="img/home/02.jpg" alt="Florian">
+                <img src="img/home/03.jpg" alt="Florian">
+                <img src="img/home/04.jpg" alt="Florian">
+                <img src="img/home/05.jpg" alt="Florian">
+            </div>
+            <script>
+                $(window).load(function() {
+                    console.log("Loaded");
+                    setTimeout(function() {
+                        $("body > .loader").hide();
+                        $("body > .loadedContent").fadeIn(1000);
+                    }, 2000);
 
-</html>
+                });
+            </script>
+            <script>
+                (function(i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r;
+                    i[r] = i[r] || function() {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    },
+                    i[r].l = 1 * new Date();
+                    a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                    a.async = 1;
+                    a.src = g;
+                    m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-77872125-3', {'cookieDomain': 'none'});
+            </script>
+        </body>
+
+    </html>
