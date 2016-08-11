@@ -11,6 +11,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.template.header = "views/header2.html";
 
     $scope.section = {
       one: "views/section/section1.html",
@@ -94,7 +95,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           new ScrollMagic.Scene({
               triggerElement: "#pinContainer",
               triggerHook: "onLeave",
-              duration: "500%"
+              duration: "600%"
             })
             .setPin("#pinContainer")
             .setTween(wipeAnimation)
@@ -140,8 +141,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         });
 
-
-      }, 100);
+        $("body > .loader").hide();
+        $("body > .loadedContent").fadeIn(1000);
+      }, 1000);
       // init
 
     });
@@ -266,6 +268,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.tvcs = [
+      'SyGHUKQqlZ8',
+      'gY_eOL_xwa0',
       'iTIpWlZeHdg',
       'PrOHbjhSLOE',
       'jM7nQCX9joE',
@@ -273,9 +277,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       'nR0-029uB4E',
       'kgIs8B173KY',
       'BGtgIchcGEM',
-      'eMlK1eBQTzI',
-      'SyGHUKQqlZ8',
-      'gY_eOL_xwa0'
+      'eMlK1eBQTzI'
     ];
   })
 

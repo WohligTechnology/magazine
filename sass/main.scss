@@ -121,9 +121,16 @@ body {
   width: 100%;
   left: 0;
   top: 25px;
-  opacity: 0;
-  z-index: -1;
   @include transition(all ease 300ms);
+
+  &.header-zindex {
+    z-index: 999;
+  }
+
+  &.header-opac {
+    opacity: 0;
+    z-index: -1;
+  }
 
   &.affix {
     opacity: 1;
