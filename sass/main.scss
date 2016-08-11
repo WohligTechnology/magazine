@@ -101,6 +101,15 @@ body {
   background: $brand-dark;
 }
 
+body.noShow {
+  opacity: 0;
+}
+
+body.noShow.show {
+  opacity: 1;
+  @include transition(all ease 500ms);
+}
+
 .btn.active.focus,
 .btn.active:focus,
 .btn.focus,
@@ -310,8 +319,11 @@ body {
   }
 
   .one {
-    @include background( '../img/home/01.gif');
     z-index: 10;
+  }
+
+  .one.imageLoad {
+    @include background( '../img/home/01.gif');
   }
   // landing
   .two {

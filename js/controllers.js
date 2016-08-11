@@ -6,6 +6,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //Used to name the .html file
     console.log("Testing Consoles");
 
+    $("body").addClass("noShow");
+
     $scope.template = TemplateService.changecontent("home");
     $scope.template.footerShow = "hidden";
     $scope.menutitle = NavigationService.makeactive("Home");
@@ -95,7 +97,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           new ScrollMagic.Scene({
               triggerElement: "#pinContainer",
               triggerHook: "onLeave",
-              duration: "600%"
+              duration: "500%"
             })
             .setPin("#pinContainer")
             .setTween(wipeAnimation)
@@ -103,8 +105,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             .addTo(controller);
           globalFunc.cont = controller;
 
-          scrollHei = $(window).height() / 1.6;
-
+          scrollHei = $(window).height() / 1.5;
+          console.log("Window HEI", $(window).height());
+          console.log("Scroll HEI", scrollHei);
+          console.log("Scroll HEI 5", scrollHei * 5);
           if ($stateParams.isContact) {
             // $(window).scrollTop(scrollHei * 6);
             $document.scrollTopAnimated(scrollHei * 6).then(function() {
@@ -115,6 +119,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // $(window).scrollTop(scrollHei * 5);
             $document.scrollTopAnimated(scrollHei * 5).then(function() {
               console.log('Scrolled');
+
             });
           }
 
@@ -140,10 +145,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           });
 
         });
-
-        $("body > .loader").hide();
-        $("body > .loadedContent").fadeIn(1000);
-      }, 1000);
+        $("body").addClass("show");
+        $(".one").addClass("imageLoad");
+      }, 2000);
       // init
 
     });
