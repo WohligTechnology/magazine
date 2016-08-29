@@ -4,10 +4,10 @@
       <h2 class="text-uppercase">Designers</h2>
     </div>
     <div class="designer-option text-right">
-      <select class="text-uppercas" ng-model="select.designer" ng-change="getDesigns(select.designer)" name="designers">
-        <option value="all" selected>Designers</option>
-        <option value="gavin">Gavin Miguel</option>
-        <option value="angeinx">AngeINX</option>
+      <select class="text-uppercas" ng-model="designName" ng-change="getDesigns(designName)" name="designers">
+        <!-- <option value="all" selected>Designers</option> -->
+        <option ng-repeat="data in allDesigners" value="{{data.name}}">{{data.name}}</option>
+        <!-- <option value="angeinx">AngeINX</option> -->
       </select>
     </div>
     <div class="all-slider">
@@ -15,8 +15,8 @@
         <li class="">
           <div class="slider-items">
             <div class="mb15">
-                <a href="{{designer}}" fancybox-box rel="gallery1">
-              <img ng-src="{{designer}}" alt="" class="img-responsive">
+                <a href="{{designer.image|uploadpath}}" fancybox-box rel="gallery1">
+              <img ng-src="{{designer.image|uploadpath}}" alt="" class="img-responsive">
             </a>
             </div>
           </div>

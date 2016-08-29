@@ -9,7 +9,7 @@
             <p><a href="mailto:info@florianhurel.com">info@florianhurel.com</a></p>
             <p><a href="tel:+919619001149">+91 96190 01149</a></p>
           </div>
-          <div class="contact-form">
+          <div class="contact-form" ng-hide="submited">
             <form name="contact">
               <div class="row">
                 <div class="col-sm-6">
@@ -46,12 +46,13 @@
                         <span>Please Enter Your Message.</span>
                       </div>
                     </div>
-                    <button type="button" name="send" class="text-uppercase pull-right btn btn-black">Send</button>
+                    <button type="button" ng-click="sendForm()" name="send" class="text-uppercase pull-right btn btn-black">Send</button>
                   </div>
                 </div>
               </div>
             </form>
           </div>
+          <div ng-show="submited"><center>Submitted Successfully</center></div>
         </div>
       </div>
     </div>

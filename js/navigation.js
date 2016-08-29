@@ -1,4 +1,6 @@
-var adminURL = "";
+var adminURL = "http://wohlig.co.in/florianbackend/";
+var apiUrl = adminURL + "index.php/json/";
+var imgpath = adminURL + "uploads/";
 if (isproduction) {
   adminURL = "http://www.wohlig.co.in/demo/index.php";
 } else {
@@ -7,7 +9,7 @@ if (isproduction) {
 
 var navigationservice = angular.module('navigationservice', [])
 
-.factory('NavigationService', function() {
+.factory('NavigationService', function($http) {
   var navigation = [{
     name: "TVC'S",
     classis: "active",
@@ -38,6 +40,28 @@ var navigationservice = angular.module('navigationservice', [])
     getnav: function() {
       return navigation;
     },
+    getEditorials: function(callback) {
+        $http.get(apiUrl + 'getEditorials').success(callback);
+    },
+    getCelebrities: function(callback) {
+        $http.get(apiUrl + 'getCelebrities').success(callback);
+    },
+    getDesigners: function(id,callback) {
+        $http.get(apiUrl + 'getDesigners?id='+id).success(callback);
+    },
+    getTvc: function(callback) {
+        $http.get(apiUrl + 'getTvc').success(callback);
+    },
+    getAllDesigners: function(callback) {
+        $http.get(apiUrl + 'getDesigners').success(callback);
+    },
+    contactSubmit: function(obj, callback) {
+        $http.post(apiUrl + 'contactSubmit',obj).success(callback);
+    },
+    // contactSubmit: function(data,callback) {
+    //     $http.get(apiUrl + 'contactSubmit').success(callback);
+    // },
+
     makeactive: function(menuname) {
       for (var i = 0; i < navigation.length; i++) {
         if (navigation[i].name == menuname) {

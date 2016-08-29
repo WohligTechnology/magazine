@@ -33,7 +33,7 @@
     "angulartics-google-analytics": "^0.1.4",
     "reveal": "https://github.com/zurb/reveal.git",
     "gsap": "^1.18.5",
-    "scrollmagic": "^2.0.5",
+    "scrollmagic": "ScrollMagic#^2.0.5",
     "angular-scroll": "^1.0.0"
   },
   "devDependencies": {

@@ -151,6 +151,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       // init
 
     });
+$scope.formcontact={};
+$scope.submited=false;
+$scope.sendForm=function(){
+  NavigationService.contactSubmit($scope.formcontact,function(data) {
+    if(data.value==true){
+      $scope.submited=true;
+    }
+      console.log(data);
+  });
+}
+
+
 
   })
   .controller('EditorialCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -160,22 +172,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Editorial");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.editorials = [
-      'img/editorial/13.png',
-      'img/editorial/8.png',
-      'img/editorial/9.png',
-      'img/editorial/10.png',
-      'img/editorial/11.png',
-      'img/editorial/12.png',
-      'img/editorial/1.png',
-      'img/editorial/2.png',
-      //'img/editorial/3.png',
-      //'img/editorial/4.png',
-      'img/editorial/5.png',
-      'img/editorial/6.png',
-      'img/editorial/7.png'
-
-    ];
+    // $scope.editorials = [
+    //   'img/editorial/13.png',
+    //   'img/editorial/8.png',
+    //   'img/editorial/9.png',
+    //   'img/editorial/10.png',
+    //   'img/editorial/11.png',
+    //   'img/editorial/12.png',
+    //   'img/editorial/1.png',
+    //   'img/editorial/2.png',
+    //   //'img/editorial/3.png',
+    //   //'img/editorial/4.png',
+    //   'img/editorial/5.png',
+    //   'img/editorial/6.png',
+    //   'img/editorial/7.png'
+    //
+    // ];
+    NavigationService.getEditorials(function(data) {
+        console.log(data);
+        $scope.editorials = data;
+        console.log('editorials', $scope.editorials);
+    });
   })
   .controller('CelebritiesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -185,25 +202,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Celebrities");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.celebrities = [
+    // $scope.celebrities = [
       //'img/celebrities/1.png',
       //'img/celebrities/2.png',
-      'img/celebrities/3.png',
-      'img/celebrities/4.png',
-      'img/celebrities/5.png',
+      // 'img/celebrities/3.png',
+      // 'img/celebrities/4.png',
+      // 'img/celebrities/5.png',
       // 'img/celebrities/6.png',
-      'img/celebrities/7.png',
-      'img/celebrities/8.png',
-      'img/celebrities/12.png',
-      'img/celebrities/13.png',
-      'img/celebrities/14.png',
-      'img/celebrities/15.png',
-      'img/celebrities/16.png',
-      'img/celebrities/17.png',
-      'img/celebrities/18.png'
+      // 'img/celebrities/7.png',
+      // 'img/celebrities/8.png',
+      // 'img/celebrities/12.png',
+      // 'img/celebrities/13.png',
+      // 'img/celebrities/14.png',
+      // 'img/celebrities/15.png',
+      // 'img/celebrities/16.png',
+      // 'img/celebrities/17.png',
+      // 'img/celebrities/18.png'
       //'img/celebrities/9.png',
       //'img/celebrities/10.png'
-    ];
+    // ];
+
+
+            NavigationService.getCelebrities(function(data) {
+                $scope.celebrities = data;
+                console.log('celebrities', $scope.celebrities);
+            });
   })
   .controller('DesignersCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -215,52 +238,83 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.select = {};
     $scope.des = {};
     $scope.des.designs = [];
+    // $scope.des.des
     $scope.navigation = NavigationService.getnav();
-    $scope.designers = [{
-      name: "gavin",
-      "images": [
-        'img/designers/1.png',
-        'img/designers/2.png',
-        'img/designers/3.png',
-        'img/designers/4.png',
-        'img/designers/5.png',
-        'img/designers/6.png',
-        'img/designers/7.png',
-        'img/designers/8.png',
-        'img/designers/9.png',
-        'img/designers/10.png'
-      ]
-    }, {
-      name: "angeinx",
-      images: [
-        'img/celebrities/1.png',
-        'img/celebrities/2.png',
-        'img/celebrities/9.png',
-        'img/celebrities/10.png',
-        'img/celebrities/11.png'
-      ]
-    }];
+    // $scope.designers = [{
+    //   name: "gavin",
+    //   "images": [
+    //     'img/designers/1.png',
+    //     'img/designers/2.png',
+    //     'img/designers/3.png',
+    //     'img/designers/4.png',
+    //     'img/designers/5.png',
+    //     'img/designers/6.png',
+    //     'img/designers/7.png',
+    //     'img/designers/8.png',
+    //     'img/designers/9.png',
+    //     'img/designers/10.png'
+    //   ]
+    // }, {
+    //   name: "angeinx",
+    //   images: [
+    //     'img/celebrities/1.png',
+    //     'img/celebrities/2.png',
+    //     'img/celebrities/9.png',
+    //     'img/celebrities/10.png',
+    //     'img/celebrities/11.png'
+    //   ]
+    // }];
 
     _.each($scope.designers, function(key) {
       $scope.des.designs = $scope.des.designs.concat(key.images);
     });
 
     $scope.getDesigns = function(designer) {
-      $scope.des.designs = [];
-      setTimeout(function() {
-        if (designer == "all") {
-          _.each($scope.designers, function(key) {
-            $scope.des.designs = $scope.des.designs.concat(key.images);
-          });
-        } else {
-          $scope.des.designs = _.find($scope.designers, function(key) {
-            return key.name == designer;
-          }).images;
-        }
-        $scope.$apply();
-      }, 10);
-
+    console.log("in click",designer);
+    var id = _.find($scope.allDesigners,function (key) {
+      return key.name == designer;
+    }).id;
+    $scope.getDesigner(id);
     };
+    // $scope.getDesigns = function(designer) {
+    //   $scope.des.designs = [];
+    //   setTimeout(function() {
+    //     if (designer == "all") {
+    //       _.each($scope.designers, function(key) {
+    //         $scope.des.designs = $scope.des.designs.concat(key.images);
+    //       });
+    //     } else {
+    //       $scope.des.designs = _.find($scope.designers, function(key) {
+    //         return key.name == designer;
+    //       }).images;
+    //     }
+    //     $scope.$apply();
+    //   }, 10);
+    //
+    // };
+
+    $scope.getDesigner = function(id) {
+      $scope.des.designs =[];
+        NavigationService.getDesigners(id, function(data) {
+          //
+          // setTimeout(function() {
+            $scope.des.designs = data;
+            // $scope.$apply();
+            //   }, 10);
+            console.log('designers', $scope.des.designs);
+        });
+    }
+
+
+    NavigationService.getAllDesigners(function(data) {
+        $scope.allDesigners = data;
+        $scope.designName = $scope.allDesigners[0].name;
+        $scope.getDesigner($scope.allDesigners[0].id);
+
+        console.log('allDesigners', $scope.allDesigners);
+    });
+
+
 
   })
   .controller('TvcCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -271,18 +325,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("TVC'S");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-    $scope.tvcs = [
-      'SyGHUKQqlZ8',
-      'gY_eOL_xwa0',
-      'iTIpWlZeHdg',
-      'PrOHbjhSLOE',
-      'jM7nQCX9joE',
-      '2m-Iy79cL-E',
-      'nR0-029uB4E',
-      'kgIs8B173KY',
-      'BGtgIchcGEM',
-      'eMlK1eBQTzI'
-    ];
+    // $scope.tvcs = [
+    //   'SyGHUKQqlZ8',
+    //   'gY_eOL_xwa0',
+    //   'iTIpWlZeHdg',
+    //   'PrOHbjhSLOE',
+    //   'jM7nQCX9joE',
+    //   '2m-Iy79cL-E',
+    //   'nR0-029uB4E',
+    //   'kgIs8B173KY',
+    //   'BGtgIchcGEM',
+    //   'eMlK1eBQTzI'
+    // ];
+    NavigationService.getTvc(function(data) {
+        $scope.tvcs = data;
+        console.log('tvcs', $scope.tvcs);
+    });
   })
 
 .controller('headerctrl', function($scope, TemplateService) {
