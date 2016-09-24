@@ -9,19 +9,25 @@
   font-family: "Nova";
   src: url("../fonts/nova.otf");
 }
+
 @font-face {
   font-family: "Notera";
   src: url("../fonts/notera.ttf");
 }
+
 @font-face {
   font-family: "Spinwerad";
   src: url("../fonts/spinwerad.ttf");
 }
+
 @font-face {
   font-family: "Gotham Book";
   src: url("../fonts/gotham_book.ttf");
 }
+
+
 /* Bootstrap Variables Goes Here */
+
 $brand-primary: #0d9dff !default;
 $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
@@ -34,11 +40,16 @@ $brand-gray: #c4c4c4 !default; // landing hurel
 $brand-dark-gray: #151515 !default; //work background
 $brand-dark: #111111 !default; //work background
 $brand-text-color: #262626 !default; //about description
-$font-nova: "Nova", sans-serif;
-$font-notera: "Notera", sans-serif;
-$font-spinwerad: "Spinwerad", sans-serif;
-$font-gotham-book: "Gotham Book", sans-serif;
-$font-montserrat: "Montserrat", sans-serif;
+$font-nova: "Nova",
+sans-serif;
+$font-notera: "Notera",
+sans-serif;
+$font-spinwerad: "Spinwerad",
+sans-serif;
+$font-gotham-book: "Gotham Book",
+sans-serif;
+$font-montserrat: "Montserrat",
+sans-serif;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 img.loading {
   text-align: center;
@@ -47,49 +58,63 @@ img.loading {
   height: auto;
   color: $brand-dark-gray;
 }
+
 img {
   opacity: 0;
   @include transition(all 300ms ease);
 }
+
 img.doneLoading {
   opacity: 1;
 }
+
 nav li:hover .dropdown-menu {
   display: block;
 }
+
 .btn,
 a {
   cursor: pointer;
   @include transition(all ease 300ms);
 }
+
 //color classes
 .white {
   color: white;
 }
+
 .black {
   color: black;
 }
+
 .lighter-gray {
   color: $brand-lighter-gray;
 }
+
 .gray {
   color: $brand-gray;
 }
+
 .text-color {
   color: $brand-text-color;
 }
+
 .white-bg {
   background-color: white;
 }
+
 .black-bg {
   background-color: black;
 }
+
 body {
   background: $brand-dark;
 }
+
 .uppercase {
   text-decoration: uppercase;
 }
+
 .header {
   background: transparent;
   position: fixed;
@@ -108,6 +133,7 @@ body {
     }
   }
 }
+
 .btn:focus,
 .btn.focus,
 .btn:active:focus,
@@ -116,6 +142,7 @@ body {
 .btn.active.focus {
   outline: none;
 }
+
 .close-right {
   position: absolute;
   left: 130px;
@@ -127,10 +154,11 @@ body {
     opacity: 0.5;
   }
 }
+
 .sidemenu {
   position: fixed;
   width: 100%;
-  background: rgba(255,255,255,0.90);
+  background: rgba(255, 255, 255, 0.90);
   left: 0;
   top: 0;
   bottom: 0;
@@ -146,6 +174,7 @@ body {
     z-index: 99;
   }
 }
+
 .menu-made {
   margin-top: 32px;
   text-align: center;
@@ -164,11 +193,12 @@ body {
       &:focus {
         outline: 0;
         text-decoration: none;
-        color: lighten($brand-dark-gray,30%);
+        color: lighten($brand-dark-gray, 30%);
       }
     }
   }
 }
+
 .navbar-toggle.humburger {
   display: block!important;
   margin: 0;
@@ -189,31 +219,39 @@ body {
     }
   }
 }
+
 .light-gray-bg {
   background-color: $brand-light-gray;
 }
+
 .dark-gray-bg {
   background-color: $brand-dark-gray;
 }
+
 //bootstrap forms
 .btn,
 .form-control,
-.input-group-lg > .form-control,
-.input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .btn,
+.input-group-lg>.form-control,
+.input-group-lg>.input-group-addon,
+.input-group-lg>.input-group-btn>.btn,
 .input-lg {
   border-radius: 0;
   @include box-shadow(none);
 }
+
 .form-control:focus {
   border-color: $brand-primary;
   outline: 0;
   @include box-shadow(none);
 }
+
 //bootstrap forms
+
 /* Start writing sass here */
+
 @import "fancybox-override"; // background mixin
-@mixin background($url, $size: 100%) {
+@mixin background($url,
+$size: 100%) {
   background-image: url($url);
   background-size: $size;
   // background-position: center;
@@ -225,13 +263,16 @@ body {
   background-repeat: no-repeat;
   background-position: 50% 100%;
 }
+
 .section-center {
   width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
-  @include transform(translate(-50%, -50%));
+  @include transform(translate(-50%,
+  -50%));
 }
+
 .home {
   .eight,
   .five,
@@ -365,6 +406,7 @@ body {
     padding: 0 5px;
   }
 }
+
 .work {
   .celebrities-section,
   .designers-section,
@@ -414,9 +456,11 @@ body {
     }
   }
 }
+
 .pt80 {
   padding-top: 80px;
 }
+
 .all-slider {
   padding: 0 30px 0 25px;
   .flexslider {
@@ -426,7 +470,7 @@ body {
   }
   .flex-direction-nav .flex-disabled {
     opacity: 0.7!important;
-    filter:alpha(opacity=0.7);
+    filter: alpha(opacity=0.7);
     z-index: 1!important;
     cursor: pointer;
   }
@@ -490,19 +534,23 @@ body {
     }
   }
 }
+
 .hideclick {
   opacity: 0;
 }
+
 .head-text h2 {
   margin: 10px 0 -32px;
   font-size: 150px;
   letter-spacing: 10px;
   font-family: $font-nova;
 }
+
 a:focus {
   outline: 0 auto -webkit-focus-ring-color;
   outline-offset: -0px;
 }
+
 .link-made {
   padding-left: 30px;
   a,
@@ -520,18 +568,21 @@ a:focus {
     padding-right: 15px;
     &:hover,
     &:focus {
-      color: lighten($brand-text-color,10%);
+      color: lighten($brand-text-color, 10%);
     }
   }
 }
+
 .fancybox-image {
   opacity: 1!important;
 }
+
 .fancybox-nav {
   top: 50%;
   @include transform(translateY(-50%));
   height: 40%;
 }
+
 .footer {
   padding: 15px 0;
   background: #5b5b5b;
@@ -548,4 +599,12 @@ a:focus {
       color: darken(#fff, 20%);
     }
   }
+}
+
+.scroll-sec {
+  width: 72px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  @include transform(translateX(-50%));
 }
