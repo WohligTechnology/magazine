@@ -353,6 +353,15 @@ body.noShow.show {
 .flexslider {
   margin: 0;
 }
+
+.slides {
+  background-color: black;
+}
+
+.slider-content {
+  height: 100vh;
+  background-color: white;
+}
 /* Start writing sass here */
 @import "fancybox-override"; // background mixin
 @mixin background($url, $size: 100%) {

@@ -1,4 +1,4 @@
-var adminURL = "http://wohlig.co.in/florianbackend/";
+var adminURL = "http://florianhurel.com/admin/";
 var apiUrl = adminURL + "index.php/json/";
 var imgpath = adminURL + "uploads/";
 if (isproduction) {
@@ -39,6 +39,9 @@ var navigationservice = angular.module('navigationservice', [])
   return {
     getnav: function() {
       return navigation;
+    },
+    getHomeImages: function(callback) {
+        $http.get(apiUrl + 'getSlider').success(callback);
     },
     getEditorials: function(callback) {
         $http.get(apiUrl + 'getEditorials').success(callback);
