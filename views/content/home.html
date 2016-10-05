@@ -1,4 +1,4 @@
-<div class="home" id="pinContainer">
+<div class="home hidden-sm hidden-xs" id="pinContainer">
     <section class="section one panel1 " id="landing" ng-include="section.one"></section>
     <section class="section three panel1" id="tvc" ui-sref="tvc"></section>
     <section class="section five panel1" id="designers" ui-sref="designers"></section>
@@ -8,4 +8,13 @@
     <section class="section eight white-bg panel1" id="contact" ng-include="section.eight"></section>
     <section class="section nine white-bg panel1" id="contact" ng-include="section.eight"></section>
     <section class="section ten white-bg panel1" id="contact" ng-include="section.eight"></section>
+</div>
+<div class="hidden-lg hidden-md">
+  <flex-slider flex-slide="s in mySlides track by $index " prev-text="" next-text="">
+    <li>
+      <img ng-src="{{s}}" class="img-responsive" />
+    </li>
+    <li ng-if="mySlides.length - 1 == $index"><section ng-include="sliderPages.about"></section></li>
+    <li ng-if="mySlides.length - 1 == $index"><section ng-include="sliderPages.contact"></section></li>
+  </flex-slider>
 </div>

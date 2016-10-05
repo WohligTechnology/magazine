@@ -23,6 +23,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             footer: "views/footer.html"
         };
 
+        $scope.mySlides = [
+          'img/editorial/1.png',
+          'img/editorial/2.png',
+          'img/editorial/3.png',
+          'img/editorial/1.png',
+          'img/editorial/2.png',
+        ];
+
+        $scope.sliderPages = {
+          about: "views/section/section6.html",
+          contact: "views/section/section8.html"
+        };
+
         $scope.$on('$viewContentLoaded', function(event) {
             $timeout(function() {
                 $(function() { // wait for document ready

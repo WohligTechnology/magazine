@@ -9,25 +9,19 @@
   font-family: "Nova";
   src: url("../fonts/nova.otf");
 }
-
 @font-face {
   font-family: "Notera";
   src: url("../fonts/notera.ttf");
 }
-
 @font-face {
   font-family: "Spinwerad";
   src: url("../fonts/spinwerad.ttf");
 }
-
 @font-face {
   font-family: "Gotham Book";
   src: url("../fonts/gotham_book.ttf");
 }
-
-
 /* Bootstrap Variables Goes Here */
-
 $brand-primary: #0d9dff !default;
 $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
@@ -40,17 +34,13 @@ $brand-gray: #c4c4c4 !default; // landing hurel
 $brand-dark-gray: #151515 !default; //work background
 $brand-dark: #111111 !default; //work background
 $brand-text-color: #262626 !default; //about description
-$font-nova: "Nova",
-sans-serif;
-$font-notera: "Notera",
-sans-serif;
-$font-spinwerad: "Spinwerad",
-sans-serif;
-$font-gotham-book: "Gotham Book",
-sans-serif;
-$font-montserrat: "Montserrat",
-sans-serif;
+$font-nova: "Nova", sans-serif;
+$font-notera: "Notera", sans-serif;
+$font-spinwerad: "Spinwerad", sans-serif;
+$font-gotham-book: "Gotham Book", sans-serif;
+$font-montserrat: "Montserrat", sans-serif;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
 img.loading {
   text-align: center;
   opacity: 1;
@@ -77,8 +67,8 @@ a {
   cursor: pointer;
   @include transition(all ease 300ms);
 }
-
 //color classes
+
 .white {
   color: white;
 }
@@ -132,8 +122,8 @@ body.noShow.show {
 .uppercase {
   text-decoration: uppercase;
 }
-
 //menu
+
 .header {
   background: transparent;
   position: fixed;
@@ -141,22 +131,28 @@ body.noShow.show {
   left: 0;
   top: 25px;
   @include transition(all ease 300ms);
+
   &.header-zindex {
     z-index: 999;
   }
+
   &.header-opac {
     opacity: 0;
     z-index: -1;
   }
+
   &.affix {
     opacity: 1;
     z-index: 99;
   }
+
   .nav {
     text-align: center;
+
     a {
       padding: 10px;
       display: inline-block;
+
       img {
         height: 45px;
       }
@@ -171,6 +167,7 @@ body.noShow.show {
   line-height: 1;
   @include transition(all ease 300ms);
   cursor: pointer;
+
   &:hover {
     opacity: 0.5;
   }
@@ -184,11 +181,13 @@ body.noShow.show {
   top: 0;
   bottom: 0;
   right: 0;
+
   &.menu-out {
     @include transform(translateY(-120%));
     @include transition(all 300ms linear);
     z-index: 99;
   }
+
   &.menu-in {
     @include transform(translateY(0));
     @include transition(all 300ms linear);
@@ -199,8 +198,10 @@ body.noShow.show {
 .menu-made {
   margin-top: 32px;
   text-align: center;
+
   ul {
     margin-top: 30px;
+
     li a {
       padding: 8px 0 !important;
       font-size: 50px;
@@ -210,6 +211,7 @@ body.noShow.show {
       color: $brand-dark-gray;
       line-height: 130%;
       @include transition(all ease 500ms);
+
       &:focus,
       &:hover {
         outline: 0;
@@ -225,15 +227,19 @@ body.noShow.show {
   margin: 0;
   padding: 5px 10px;
   float: left;
+
   .icon-bar {
     background: $brand-hamburger-gray;
   }
+
   .navbar {
     background: #fff;
     margin-bottom: 0;
+
     &:focus,
     &:hover {
       outline: none;
+
       .icon-bar {
         background: darken($brand-hamburger-gray, 50%);
       }
@@ -248,13 +254,13 @@ body.noShow.show {
 .dark-gray-bg {
   background-color: $brand-dark-gray;
 }
-
 //bootstrap forms
+
 .btn,
 .form-control,
-.input-group-lg>.form-control,
-.input-group-lg>.input-group-addon,
-.input-group-lg>.input-group-btn>.btn,
+.input-group-lg > .form-control,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .btn,
 .input-lg {
   border-radius: 0;
   @include box-shadow(none);
@@ -265,14 +271,91 @@ body.noShow.show {
   outline: 0;
   @include box-shadow(none);
 }
-
 //bootstrap forms
+//FLEX SLIDER FIXES
 
+.flex-direction-nav {
+  a {
+    height: auto;
+  }
+
+  .flex-prev {
+    left: 10px !important;
+  }
+
+  .flex-next {
+    right: 10px !important;
+  }
+}
+//SWIPER CSS
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  background-image: url("../img/prev.png");
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  background-image: url("../img/next.png");
+}
 /* Start writing sass here */
+.content {
+  min-height: 450px;
+}
 
+.full-img {
+  width: 100%;
+  display: block;
+}
+
+.v-img {
+  height: 100vh !important;
+}
+
+.flex-control-nav {
+  display: none;
+}
+
+.contact-details h4 {
+  margin: 0;
+  font-size: 150px;
+  color: #e1e1e1;
+}
+
+.contact-details p a {
+  color: #000;
+  font-size: 18px;
+}
+
+.contact-form label {
+  color: #a1a1a1;
+}
+
+.contact-form input.form-control {
+  float: right;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  vertical-align: text-bottom;
+  width: 85%;
+  padding: 0 8px;
+  height: 19px;
+}
+
+.contact-form .form-group.form-inline {
+  height: 45px;
+}
+
+.contact-forms textarea {
+  height: 122px;
+  resize: none;
+}
+
+.flexslider {
+  margin: 0;
+}
+/* Start writing sass here */
 @import "fancybox-override"; // background mixin
-@mixin background($url,
-$size: 100%) {
+@mixin background($url, $size: 100%) {
   background-image: url($url);
   background-size: $size;
   // background-position: center;
@@ -290,8 +373,7 @@ $size: 100%) {
   position: absolute;
   top: 50%;
   left: 50%;
-  @include transform(translate(-50%,
-  -50%));
+  @include transform(translate(-50%, -50%));
 }
 
 .home {
@@ -316,9 +398,11 @@ $size: 100%) {
   .two {
     cursor: pointer;
   }
+
   .one {
     z-index: 10;
   }
+
   .one.imageLoad {
     @include background( '../img/home/01.gif');
   }
@@ -361,13 +445,16 @@ $size: 100%) {
       transform: translate(-50%, 0%);
     }
   }
+
   .about,
   .contact,
   .work {
     @extend .section-center;
   }
+
   .about {
     position: relative;
+
     h2 {
       position: relative;
       left: -100px;
@@ -377,16 +464,20 @@ $size: 100%) {
       letter-spacing: 10px;
       line-height: 0.6;
     }
+
     .about-description {
       margin-top: 40px;
+
       p {
         font-size: 13px;
         text-align: justify;
       }
     }
   }
+
   .contact-details {
     margin-bottom: 20px;
+
     h4 {
       position: relative;
       margin: 0;
@@ -395,8 +486,10 @@ $size: 100%) {
       letter-spacing: 10px;
       color: $brand-lighter-gray;
     }
+
     p {
       margin: 0;
+
       a {
         text-decoration: none;
         font-family: $font-montserrat;
@@ -405,12 +498,15 @@ $size: 100%) {
       }
     }
   }
+
   .contact-form {
     margin-top: 8px;
+
     label {
       font-family: $font-montserrat;
       color: #a1a1a1;
     }
+
     input.form-control {
       float: right;
       border: 0;
@@ -420,15 +516,18 @@ $size: 100%) {
       padding: 0 8px;
       height: 19px;
     }
+
     .form-group.form-inline {
       height: 45px;
     }
   }
+
   .contact-forms {
     textarea {
       height: 122px;
       resize: none;
     }
+
     .btn {
       font-family: $font-montserrat;
       background: $brand-dark-gray;
@@ -437,6 +536,7 @@ $size: 100%) {
       padding: 4px 24px;
     }
   }
+
   .message-label {
     font-family: $font-montserrat;
     color: #a1a1a1;
@@ -457,6 +557,7 @@ $size: 100%) {
     display: inline-block;
     vertical-align: top;
   }
+
   .work-text {
     h2 {
       font-family: $font-nova;
@@ -467,10 +568,12 @@ $size: 100%) {
       margin: 0 0 0 100px;
     }
   }
+
   .work-box {
     a:hover {
       text-decoration: none;
     }
+
     .text-same {
       font-family: $font-nova;
       font-size: 38px;
@@ -480,18 +583,22 @@ $size: 100%) {
       position: relative;
       z-index: 1;
     }
+
     img {
       position: relative;
       z-index: 0;
     }
+
     .odd {
       img {
         margin-top: -15px;
       }
+
       h4 {
         margin: 70px 10px 0;
       }
     }
+
     .even h4 {
       margin: -20px 20px 0;
     }
@@ -504,23 +611,28 @@ $size: 100%) {
 
 .all-slider {
   padding: 0 30px 0 25px;
+
   .flexslider {
     margin: 0 0 20px;
     background: transparent;
     border-color: transparent;
   }
+
   .flex-direction-nav .flex-disabled {
     opacity: 0.7!important;
     filter: alpha(opacity=0.7);
     z-index: 1!important;
     cursor: pointer;
   }
+
   .flex-direction-nav a.flex-prev:before {
     content: url('../img/l-arrow.png');
   }
+
   .flex-direction-nav a.flex-next:before {
     content: url('../img/r-arrow.png');
   }
+
   .flex-control-nav {
     display: none;
   }
@@ -544,6 +656,7 @@ $size: 100%) {
     opacity: 1;
     left: -40px;
   }
+
   .flex-direction-nav a {
     width: 30px;
     height: 50px;
@@ -561,11 +674,13 @@ $size: 100%) {
     opacity: 1;
     right: -40px;
   }
+
   .flexslider:hover .flex-direction-nav .flex-after,
   .flexslider:hover .flex-disabled {
     opacity: 1;
     outline: none;
   }
+
   .flexslider:hover .flex-direction-nav .flex-prev {
     opacity: 1;
     left: -40px;
@@ -589,6 +704,7 @@ $size: 100%) {
   // }
   .slider-items {
     position: relative;
+
     .get-center {
       position: absolute;
       bottom: 15px;
@@ -621,6 +737,7 @@ a:focus {
 
 .link-made {
   padding-left: 30px;
+
   a,
   li {
     font-size: 20px;
@@ -628,12 +745,15 @@ a:focus {
     @include transition(all ease 300ms);
     text-transform: uppercase;
     font-family: $font-montserrat;
+
     &:hover {
       text-decoration: none;
     }
   }
+
   a {
     padding-right: 15px;
+
     &:focus,
     &:hover {
       color: lighten($brand-text-color, 10%);
@@ -654,13 +774,16 @@ a:focus {
 .footer {
   padding: 15px 0;
   background: #5b5b5b;
+
   p {
     margin: 0;
     color: #fff;
   }
+
   a {
     color: #fff;
     @include transition(all ease 300ms);
+
     &:focus,
     &:hover {
       text-decoration: none;
@@ -682,6 +805,7 @@ a:focus {
 
 .designer-option {
   margin-top: -85px;
+
   select {
     width: 200px;
     height: 40px;
@@ -690,15 +814,13 @@ a:focus {
     color: #717171;
     font-size: 16px;
     border: 3px solid #2f2f2f;
+
     &:focus {
       outline: none;
     }
   }
 }
-
-
 /* REVEALER ANIMATIONS */
-
 .anim--effect-3 .revealer--animate .revealer__layer {
   animation: anim-effect-3-1 2s cubic-bezier(0.550, 0.055, 0.675, 0.190) forwards;
 }
@@ -710,43 +832,45 @@ a:focus {
 .anim--effect-3 .revealer--animate .revealer__layer:nth-child(3) {
   animation-name: anim-effect-3-3;
 }
-
 @keyframes anim-effect-3-1 {
   0% {
     transform: translate3d(0, 0, 0);
   }
+
   25%,
   75% {
     transform: translate3d(0, -100%, 0);
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
   }
+
   100% {
     transform: translate3d(0, -200%, 0);
   }
 }
-
 @keyframes anim-effect-3-2 {
   0%,
   12.5% {
     transform: translate3d(0, 0, 0);
   }
+
   37.5%,
   62.5% {
     transform: translate3d(0, -100%, 0);
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
   }
+
   100%,
   87.5% {
     transform: translate3d(0, -200%, 0);
   }
 }
-
 @keyframes anim-effect-3-3 {
   0%,
   25% {
     transform: translate3d(0, 0, 0);
     animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
   }
+
   100%,
   75% {
     transform: translate3d(0, -200%, 0);
@@ -849,10 +973,10 @@ html {
 a.menu-logo.text-center img {
   height: 65px;
 }
-
 // section.editorial {
 //   min-height: 650px;
 // }
+
 #pinContainer {
   width: 100% !important;
   height: 100% !important;
@@ -894,9 +1018,11 @@ a.menu-logo.text-center img {
 .close {
   padding: 10px 0;
   opacity: 1;
+
   &:hover {
     opacity: 0.7;
   }
+
   img {
     width: 15px;
   }
@@ -906,8 +1032,7 @@ a.menu-logo.text-center img {
   position: absolute;
   bottom: -25px;
   left: 50%;
-  @include transform(translate(-50%,
-  -50%));
+  @include transform(translate(-50%, -50%));
   width: 100%;
 }
 
@@ -918,5 +1043,4 @@ a.menu-logo.text-center img {
   left: 50%;
   @include transform(translateX(-50%));
 }
-
 @import "mobile";
