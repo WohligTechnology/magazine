@@ -1017,6 +1017,9 @@ a.menu-logo.text-center img {
   }
   .flexslider {
     border: 0;
+    .flex-direction-nav {
+      display: none;
+    }
   }
   li {
     .img-height {
