@@ -1,20 +1,27 @@
 <div class="home hidden-sm hidden-xs" id="pinContainer">
-    <section class="section one panel1 " id="landing" ng-include="section.one"></section>
-    <section class="section three panel1" id="tvc" ui-sref="tvc"></section>
-    <section class="section five panel1" id="designers" ui-sref="designers"></section>
-    <section class="section two panel1" id="editorials" ui-sref="editorial"></section>
-    <section class="section four panel1" id="celebrities" ui-sref="celebrities"></section>
-    <section class="section six light-gray-bg panel1" id="about" ng-include="section.six"></section>
-    <section class="section eight white-bg panel1" id="contact" ng-include="section.eight"></section>
-    <section class="section nine white-bg panel1" id="contact" ng-include="section.eight"></section>
-    <section class="section ten white-bg panel1" id="contact" ng-include="section.eight"></section>
+  <section class="section one panel1 " id="landing" ng-include="section.one"></section>
+  <section class="section three panel1" id="tvc" ui-sref="tvc"></section>
+  <section class="section five panel1" id="designers" ui-sref="designers"></section>
+  <section class="section two panel1" id="editorials" ui-sref="editorial"></section>
+  <section class="section four panel1" id="celebrities" ui-sref="celebrities"></section>
+  <section class="section six light-gray-bg panel1" id="about" ng-include="section.six"></section>
+  <section class="section eight white-bg panel1" id="contact" ng-include="section.eight"></section>
+  <section class="section nine white-bg panel1" id="contact" ng-include="section.eight"></section>
+  <section class="section ten white-bg panel1" id="contact" ng-include="section.eight"></section>
 </div>
-<div class="home hidden-lg hidden-md">
+<div class="home home-mobile hidden-lg hidden-md">
+  <div ng-include="template.header" class="template"></div>
   <flex-slider flex-slide="s in mySlides track by $index " prev-text="" next-text="">
     <li>
-      <img ng-src="{{s.mobile_image | uploadpath}}" class="img-responsive" />
+      <a ng-href="{{s.url}}" target="_new">
+        <img ng-src="{{s.mobile_image | uploadpath}}" class="img-height img-responsive" />
+      </a>
     </li>
-    <li ng-if="mySlides.length - 1 == $index"><section class="slider-content" ng-include="sliderPages.about"></section></li>
-    <li ng-if="mySlides.length - 1 == $index"><section class="slider-content" ng-include="sliderPages.contact"></section></li>
+    <li ng-if="mySlides.length - 1 == $index">
+      <section class="slider-content" ng-include="sliderPages.about"></section>
+    </li>
+    <li ng-if="mySlides.length - 1 == $index">
+      <section class="slider-content" ng-include="sliderPages.contact"></section>
+    </li>
   </flex-slider>
 </div>
