@@ -13,7 +13,7 @@
   <div ng-include="template.header" class="template"></div>
   <flex-slider flex-slide="s in mySlides track by $index " prev-text="" next-text="">
     <li>
-      <a ng-href="{{s.url}}" target="_new">
+      <a ng-href="{{s.url}}">
         <img ng-src="{{s.mobile_image | uploadpath}}" class="img-height img-responsive" />
       </a>
     </li>
