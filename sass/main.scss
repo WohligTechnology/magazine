@@ -9,25 +9,19 @@
   font-family: "Nova";
   src: url("../fonts/nova.otf");
 }
-
 @font-face {
   font-family: "Notera";
   src: url("../fonts/notera.ttf");
 }
-
 @font-face {
   font-family: "Spinwerad";
   src: url("../fonts/spinwerad.ttf");
 }
-
 @font-face {
   font-family: "Gotham Book";
   src: url("../fonts/gotham_book.ttf");
 }
-
-
 /* Bootstrap Variables Goes Here */
-
 $brand-primary: #0d9dff !default;
 $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
@@ -40,16 +34,11 @@ $brand-gray: #c4c4c4 !default; // landing hurel
 $brand-dark-gray: #151515 !default; //work background
 $brand-dark: #111111 !default; //work background
 $brand-text-color: #262626 !default; //about description
-$font-nova: "Nova",
-sans-serif;
-$font-notera: "Notera",
-sans-serif;
-$font-spinwerad: "Spinwerad",
-sans-serif;
-$font-gotham-book: "Gotham Book",
-sans-serif;
-$font-montserrat: "Montserrat",
-sans-serif;
+$font-nova: "Nova", sans-serif;
+$font-notera: "Notera", sans-serif;
+$font-spinwerad: "Spinwerad", sans-serif;
+$font-gotham-book: "Gotham Book", sans-serif;
+$font-montserrat: "Montserrat", sans-serif;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 img.loading {
   text-align: center;
@@ -58,68 +47,53 @@ img.loading {
   height: auto;
   color: $brand-dark-gray;
 }
-
 img {
   opacity: 0;
   @include transition(all 300ms ease);
 }
-
 img.doneLoading {
   opacity: 1;
 }
-
 nav li:hover .dropdown-menu {
   display: block;
 }
-
 .btn,
 a {
   cursor: pointer;
   @include transition(all ease 300ms);
 }
-
 //color classes
 .white {
   color: white;
 }
-
 .black {
   color: black;
 }
-
 .lighter-gray {
   color: $brand-lighter-gray;
 }
-
 .gray {
   color: $brand-gray;
 }
-
 .text-color {
   color: $brand-text-color;
 }
-
 .white-bg {
   background-color: white;
 }
-
 .black-bg {
   background-color: black;
 }
-
 body {
   background: $brand-dark;
 }
-
 body.noShow {
   opacity: 0;
 }
-
 body.noShow.show {
   opacity: 1;
   @include transition(all ease 500ms);
 }
-
 .btn.active.focus,
 .btn.active:focus,
 .btn.focus,
@@ -128,11 +102,9 @@ body.noShow.show {
 .btn:focus {
   outline: none;
 }
-
 .uppercase {
   text-decoration: uppercase;
 }
-
 //menu
 .header {
   background: transparent;
@@ -163,7 +135,6 @@ body.noShow.show {
     }
   }
 }
-
 .close-right {
   position: absolute;
   left: 130px;
@@ -175,7 +146,6 @@ body.noShow.show {
     opacity: 0.5;
   }
 }
-
 .sidemenu {
   position: fixed;
   width: 100%;
@@ -195,7 +165,6 @@ body.noShow.show {
     z-index: 99;
   }
 }
-
 .menu-made {
   margin-top: 32px;
   text-align: center;
@@ -219,7 +188,6 @@ body.noShow.show {
     }
   }
 }
-
 .navbar-toggle.humburger {
   display: block!important;
   margin: 0;
@@ -240,32 +208,27 @@ body.noShow.show {
     }
   }
 }
-
 .light-gray-bg {
   background-color: $brand-light-gray;
 }
-
 .dark-gray-bg {
   background-color: $brand-dark-gray;
 }
-
 //bootstrap forms
 .btn,
 .form-control,
-.input-group-lg>.form-control,
-.input-group-lg>.input-group-addon,
-.input-group-lg>.input-group-btn>.btn,
+.input-group-lg > .form-control,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .btn,
 .input-lg {
   border-radius: 0;
   @include box-shadow(none);
 }
-
 .form-control:focus {
   border-color: $brand-primary;
   outline: 0;
   @include box-shadow(none);
 }
-
 //bootstrap forms
 //FLEX SLIDER FIXES
 .flex-direction-nav {
@@ -279,53 +242,41 @@ body.noShow.show {
     right: 10px !important;
   }
 }
-
 //SWIPER CSS
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
   background-image: url("../img/prev.png");
 }
-
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
   background-image: url("../img/next.png");
 }
-
-
 /* Start writing sass here */
-
 .content {
   min-height: 450px;
 }
-
 .full-img {
   width: 100%;
   display: block;
 }
-
 .v-img {
   height: 100vh !important;
 }
-
 .flex-control-nav {
   display: none;
 }
-
 .contact-details h4 {
   margin: 0;
   font-size: 150px;
   color: #e1e1e1;
 }
-
 .contact-details p a {
   color: #000;
   font-size: 18px;
 }
-
 .contact-form label {
   color: #a1a1a1;
 }
-
 .contact-form input.form-control {
   float: right;
   border: 0;
@@ -335,35 +286,26 @@ body.noShow.show {
   padding: 0 8px;
   height: 19px;
 }
-
 .contact-form .form-group.form-inline {
   height: 45px;
 }
-
 .contact-forms textarea {
   height: 122px;
   resize: none;
 }
-
 .flexslider {
   margin: 0;
 }
-
 .slides {
   background-color: black;
 }
-
 .slider-content {
   height: 100vh;
   background-color: white;
 }
-
-
 /* Start writing sass here */
-
 @import "fancybox-override"; // background mixin
-@mixin background($url,
-$size: 100%) {
+@mixin background($url, $size: 100%) {
   background-image: url($url);
   background-size: $size;
   // background-position: center;
@@ -375,16 +317,13 @@ $size: 100%) {
   background-repeat: no-repeat;
   background-position: center;
 }
-
 .section-center {
   width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
-  @include transform(translate(-50%,
-  -50%));
+  @include transform(translate(-50%, -50%));
 }
-
 .home {
   // .eight,
   // .five,
@@ -538,7 +477,6 @@ $size: 100%) {
     padding: 0 5px;
   }
 }
-
 .work {
   .celebrities-section,
   .designers-section,
@@ -588,11 +526,9 @@ $size: 100%) {
     }
   }
 }
-
 .pt80 {
   padding-top: 80px;
 }
-
 .all-slider {
   padding: 0 30px 0 25px;
   .flexslider {
@@ -693,23 +629,19 @@ $size: 100%) {
     }
   }
 }
-
 .hideclick {
   opacity: 0;
 }
-
 .head-text h2 {
   margin: 10px 0 -32px;
   font-size: 130px;
   letter-spacing: 10px;
   font-family: $font-nova;
 }
-
 a:focus {
   outline: 0 auto -webkit-focus-ring-color;
   outline-offset: -0px;
 }
-
 .link-made {
   padding-left: 30px;
   a,
@@ -731,17 +663,14 @@ a:focus {
     }
   }
 }
-
 .fancybox-image {
   opacity: 1!important;
 }
-
 .fancybox-nav {
   top: 50%;
   @include transform(translateY(-50%));
   height: 40%;
 }
-
 .footer {
   padding: 15px 0;
   background: #5b5b5b;
@@ -759,18 +688,15 @@ a:focus {
     }
   }
 }
-
 .menu-logo {
   width: 250px;
   height: auto;
   margin: 0 auto;
   display: block;
 }
-
 .editorial {
   min-height: calc(100vh - 50px);
 }
-
 .designer-option {
   margin-top: -85px;
   select {
@@ -786,22 +712,16 @@ a:focus {
     }
   }
 }
-
-
 /* REVEALER ANIMATIONS */
-
 .anim--effect-3 .revealer--animate .revealer__layer {
   animation: anim-effect-3-1 2s cubic-bezier(0.550, 0.055, 0.675, 0.190) forwards;
 }
-
 .anim--effect-3 .revealer--animate .revealer__layer:nth-child(2) {
   animation-name: anim-effect-3-2;
 }
-
 .anim--effect-3 .revealer--animate .revealer__layer:nth-child(3) {
   animation-name: anim-effect-3-3;
 }
-
 @keyframes anim-effect-3-1 {
   0% {
     transform: translate3d(0, 0, 0);
@@ -815,7 +735,6 @@ a:focus {
     transform: translate3d(0, -200%, 0);
   }
 }
-
 @keyframes anim-effect-3-2 {
   0%,
   12.5% {
@@ -831,7 +750,6 @@ a:focus {
     transform: translate3d(0, -200%, 0);
   }
 }
-
 @keyframes anim-effect-3-3 {
   0%,
   25% {
@@ -843,19 +761,16 @@ a:focus {
     transform: translate3d(0, -200%, 0);
   }
 }
-
 body,
 html {
   min-height: 100vh;
   overflow-x: hidden;
 }
-
 .js .container {
   position: relative;
   height: 100vh;
   overflow: hidden;
 }
-
 .js .pages {
   position: relative;
   overflow: hidden;
@@ -863,13 +778,11 @@ html {
   height: 100vh;
   z-index: 0;
 }
-
 .page {
   padding: 0;
   display: flex;
   flex-direction: column;
 }
-
 .js .page {
   position: absolute;
   top: 0;
@@ -879,12 +792,10 @@ html {
   visibility: hidden;
   z-index: 1;
 }
-
 .js .page--current {
   visibility: visible;
   position: relative;
 }
-
 .revealer {
   width: 100vw;
   height: 100vh;
@@ -892,7 +803,6 @@ html {
   z-index: 1000;
   pointer-events: none;
 }
-
 .revealer--cornerbottomleft,
 .revealer--cornerbottomright,
 .revealer--cornertopleft,
@@ -900,26 +810,21 @@ html {
   top: 50%;
   left: 50%;
 }
-
 .revealer--bottom,
 .revealer--top {
   left: 0;
 }
-
 .revealer--left,
 .revealer--right {
   top: 50%;
   left: 50%;
 }
-
 .revealer--top {
   bottom: 100%;
 }
-
 .revealer--bottom {
   top: 100%;
 }
-
 .revealer__layer {
   position: absolute;
   width: 100%;
@@ -928,19 +833,15 @@ html {
   left: 0;
   background: #ddd;
 }
-
 .page {
   display: none !important;
 }
-
 .page.page--current {
   display: block !important;
 }
-
 a.menu-logo.text-center img {
   height: 65px;
 }
-
 // section.editorial {
 //   min-height: 650px;
 // }
@@ -949,18 +850,15 @@ a.menu-logo.text-center img {
   height: 100% !important;
   overflow: hidden !important;
 }
-
 .panel1 {
   height: 100% !important;
   width: 100% !important;
   position: absolute !important;
 }
-
 .modal {
   text-align: center;
   padding: 0 !important;
 }
-
 .modal:before {
   content: '';
   display: inline-block;
@@ -968,20 +866,17 @@ a.menu-logo.text-center img {
   vertical-align: middle;
   margin-right: -4px;
 }
-
 .modal-dialog {
   display: inline-block;
   text-align: left;
   vertical-align: middle;
 }
-
 .thank {
   font-size: 24px;
   line-height: 36px;
   padding: 0 12px 40px;
   font-family: $font-montserrat;
 }
-
 .close {
   padding: 10px 0;
   opacity: 1;
@@ -992,16 +887,13 @@ a.menu-logo.text-center img {
     width: 15px;
   }
 }
-
 .btm-footer {
   position: absolute;
   bottom: -25px;
   left: 50%;
-  @include transform(translate(-50%,
-  -50%));
+  @include transform(translate(-50%, -50%));
   width: 100%;
 }
-
 .scroll-sec {
   position: absolute;
   bottom: 50px;
@@ -1009,7 +901,6 @@ a.menu-logo.text-center img {
   left: 50%;
   @include transform(translateX(-50%));
 }
-
 .home-mobile {
   .header-opac {
     opacity: 1;
@@ -1027,5 +918,92 @@ a.menu-logo.text-center img {
     }
   }
 }
-
+.contact-main {
+  background: #fff;
+  height: 100vh;
+  .contact {
+    @extend .section-center;
+    background: #fff;
+    .contact-details h4 {
+      margin: 0;
+      font-size: 150px;
+      color: #e1e1e1;
+    }
+    .contact-details p a {
+      color: #000;
+      font-size: 18px;
+    }
+    .contact-form label {
+      color: #a1a1a1;
+    }
+    .contact-form input.form-control {
+      float: right;
+      border: 0;
+      border-bottom: 1px solid #ccc;
+      vertical-align: text-bottom;
+      width: 85%;
+      padding: 0 8px;
+      height: 19px;
+    }
+    .contact-form .form-group.form-inline {
+      height: 45px;
+    }
+    .contact-forms textarea {
+      height: 122px;
+      resize: none;
+    }
+    .contact-details {
+      margin-bottom: 20px;
+      h4 {
+        position: relative;
+        margin: 0;
+        font-family: $font-nova;
+        font-size: 150px;
+        letter-spacing: 10px;
+        color: $brand-lighter-gray;
+      }
+      p {
+        margin: 0;
+        a {
+          text-decoration: none;
+          font-family: $font-montserrat;
+          color: black;
+          font-size: 18px;
+        }
+      }
+    }
+    .contact-form {
+      margin-top: 8px;
+      label {
+        font-family: $font-montserrat;
+        color: #a1a1a1;
+      }
+      input.form-control {
+        float: right;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        vertical-align: text-bottom;
+        width: 85%;
+        padding: 0 8px;
+        height: 19px;
+      }
+      .form-group.form-inline {
+        height: 45px;
+      }
+    }
+    .contact-forms {
+      textarea {
+        height: 122px;
+        resize: none;
+      }
+      .btn {
+        font-family: $font-montserrat;
+        background: $brand-dark-gray;
+        color: #ffffff;
+        font-size: 14px;
+        padding: 4px 24px;
+      }
+    }
+  }
+}
 @import "mobile";

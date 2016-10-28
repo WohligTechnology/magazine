@@ -30,11 +30,19 @@ var navigationservice = angular.module('navigationservice', [])
     name: "About",
     classis: "active",
     anchor: "about",
-  }, {
+  },
+  //  {
+  //   name: "Contact",
+  //   classis: "active",
+  //   anchor: "contact",
+  // }
+   {
     name: "Contact",
     classis: "active",
-    anchor: "contact",
-  }];
+    anchor: "contactus",
+    new:"_blank"
+  }
+];
 
   return {
     getnav: function() {

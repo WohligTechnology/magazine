@@ -228,6 +228,43 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log('editorials', $scope.editorials);
         });
     })
+    .controller('ContactCtrl', function($scope, TemplateService, NavigationService, $timeout,$uibModal) {
+        //Used to name the .html file
+        console.log("Testing Consoles");
+        $scope.template = TemplateService.changecontent("contactus");
+        $scope.menutitle = NavigationService.makeactive("Contact");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+
+        $scope.openThank = function() {
+            $scope.formcontact = {};
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: 'views/modal/thank.html',
+                backdropClass: 'backcolor'
+            });
+        }
+
+        $scope.formcontact = {};
+        $scope.submited = false;
+        $scope.sendForm = function() {
+            NavigationService.contactSubmit($scope.formcontact, function(data) {
+                if (data.value == true) {
+                    $scope.submited = true;
+                    $scope.openThank();
+                }
+
+                console.log(data);
+            });
+            $timeout(function() {
+                $scope.submited = false;
+            }, 2000);
+        };
+
+
+
+    })
     .controller('CelebritiesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         console.log("Testing Consoles");
