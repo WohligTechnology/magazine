@@ -31,6 +31,7 @@
     "angular": "^1.5.0",
     "fancyBox": "fancybox#^2.1.5",
     "angulartics-google-analytics": "^0.1.4",
+    "angular-masonry": "^0.16.0",
     "reveal": "https://github.com/zurb/reveal.git",
     "gsap": "^1.18.5",
     "scrollmagic": "ScrollMagic#^2.0.5",

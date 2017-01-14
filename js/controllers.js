@@ -14,6 +14,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.template.header = "views/header2.html";
+        $scope.template.header1 = "";
 
         $scope.section = {
             one: "views/section/section1.html",
@@ -195,10 +196,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.submited = false;
             }, 2000);
         };
-
-
-
     })
+
+    .controller('HomesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+        $scope.template = TemplateService.changecontent("homes");
+        $scope.menutitle = NavigationService.makeactive("Homes");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+        $scope.template.header = "";
+        $scope.template.header1 = "views/header1.html";
+  })
+
     .controller('EditorialCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         console.log("Testing Consoles");

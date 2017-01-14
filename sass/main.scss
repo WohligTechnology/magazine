@@ -105,6 +105,10 @@ body.noShow.show {
 .uppercase {
   text-decoration: uppercase;
 }
+
+.uppercases{
+  text-transform: uppercase;
+}
 //menu
 .header {
   background: transparent;
@@ -529,6 +533,91 @@ body.noShow.show {
 .pt80 {
   padding-top: 80px;
 }
+
+//ruchira
+
+.pt50{
+   padding: 50px 0;
+}
+
+.pointer{
+  cursor:pointer;
+}
+
+.artist-info{
+  p,span{
+    color: #fff;
+  }
+  span{
+    text-decoration: underline;
+  }
+}
+
+.heads{
+border-bottom: 2px solid #fff;
+}
+
+.navs{
+  padding: 20px 0;
+  .log{
+    display: inline-block;
+    height: auto;
+    width: 300px;
+    img{
+      width: 100%;
+    }
+  }
+  ul{
+    height: 60px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li{
+      border-right: 1px solid #fff;
+      padding: 0 10px;
+      &:nth-last-child(1){
+      border:none;
+      }
+      a{
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+   
+  }
+}
+
+.masonry-width {
+    .masonry-box {
+        width: 280px;
+    }
+}
+.masonry-brick {
+    margin: 5px;
+}
+
+.custom-box {
+    .masonry-brick {
+        margin-bottom: 10px;
+        background-color: #000;
+    }
+}
+
+.masonry-box a {
+    display: block !important;
+}
+
+.masonry-box {
+    width: 280px;
+
+    img {
+        width: 100%;
+    }
+}
+
+//ruchira
+
 .all-slider {
   padding: 0 30px 0 25px;
   .flexslider {

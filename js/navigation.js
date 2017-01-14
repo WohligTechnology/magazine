@@ -48,9 +48,9 @@ var navigationservice = angular.module('navigationservice', [])
     getnav: function() {
       return navigation;
     },
-    getHomeImages: function(callback) {
-        $http.get(apiUrl + 'getSlider').success(callback);
-    },
+    // getHomeImages: function(callback) {
+    //     $http.get(apiUrl + 'getSlider').success(callback);
+    // },
     getEditorials: function(callback) {
         $http.get(apiUrl + 'getEditorials').success(callback);
     },
