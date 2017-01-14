@@ -3,6 +3,7 @@ var jsArray = [
   './bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
   './bower_components/flexslider/jquery.flexslider-min.js',
   './bower_components/fancyBox/source/jquery.fancybox.js',
+  './bower_components/fancyBox/source/helpers/jquery.fancybox-thumbs.js',
   './bower_components/scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
   './bower_components/gsap/src/minified/TweenMax.min.js',
   './bower_components/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js',

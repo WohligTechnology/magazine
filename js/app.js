@@ -130,7 +130,28 @@ firstapp.directive('fancyboxBox', function($document) {
         }
     };
 });
+firstapp.directive('fancyboxThumb', function() {
+    return {
+        restrict: 'C',
+        replace: false,
+        link: function($scope, element, attrs) {
+            $('.fancybox-thumb').fancybox({
+                prevEffect: 'none',
+                nextEffect: 'none',
+                helpers: {
+                    title: {
+                        type: 'outside'
+                    },
+                    thumbs: {
+                        width: 70,
+                        height: 70
+                    }
+                }
+            });
 
+        }
+    };
+});
 firstapp.directive('autoHeight', function($compile, $parse) {
     return {
         restrict: 'EA',

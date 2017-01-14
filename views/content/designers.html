@@ -10,12 +10,12 @@
         <!-- <option value="angeinx">AngeINX</option> -->
       </select>
     </div>
-    <div class="all-slider">
+    <div class="all-slider cd-slider">
       <flex-slider ng-if="des.designs.length>0" flex-slide="designer in des.designs track by $index" item-width="250" item-margin="20" animation="slide" animation-loop="false" slideshow="false" prev-text="" next-text="">
         <li class="">
           <div class="slider-items">
             <div class="mb15">
-                <a href="{{designer.image|uploadpath}}" fancybox-box rel="gallery1">
+                <a href="{{designer.image|uploadpath}}" class="fancybox-thumb" rel="fancybox-thumb">
               <img ng-src="{{designer.image|uploadpath}}" alt="" class="img-responsive">
             </a>
             </div>

@@ -5,6 +5,7 @@
 @import "../bower_components/flexslider/flexslider.css";
 @import "../bower_components/font-awesome/css/font-awesome.min.css";
 @import "../bower_components/fancyBox/source/jquery.fancybox.css";
+@import "../bower_components/fancyBox/source/helpers/jquery.fancybox-thumbs";
 @font-face {
   font-family: "Nova";
   src: url("../fonts/nova.otf");
@@ -149,6 +150,9 @@ body.noShow.show {
   &:hover {
     opacity: 0.5;
   }
+}
+#fancybox-thumbs ul li img {
+    opacity: 1;
 }
 .sidemenu {
   position: fixed;
@@ -584,7 +588,7 @@ border-bottom: 2px solid #fff;
         text-decoration: none;
       }
     }
-   
+
   }
 }
 
@@ -666,7 +670,7 @@ border-bottom: 2px solid #fff;
     text-align: right;
     opacity: 0.7;
     right: -40px;
-    top: 60px;
+      top: 50%;
     bottom: auto;
   }
   // .flex-direction-nav .flex-prev {
@@ -1093,6 +1097,45 @@ a.menu-logo.text-center img {
         padding: 4px 24px;
       }
     }
+  }
+}
+.fancybox-prev span {
+    left: 10px;
+    background-position: 0 -36px;
+    visibility: visible;
+}
+.fancybox-next span {
+  right: 10px;
+  background-position: 0 -72px;
+  visibility: visible;
+}
+.fancybox-nav {
+  @include transform(translateY(inherit));
+    height: 8%;
+    bottom: -70px;
+    top: inherit;
+}
+.fancybox-inner {
+    overflow: hidden !important;
+}
+.fancybox-skin {
+    background: transparent;
+}
+.cd-slider{
+  .fancybox-next span {
+    right: 10px;
+    background-position: 0 -72px;
+    visibility: visible;
+}
+  .fancybox-nav{
+    span{
+          visibility: visible !important;
+    }
+  }
+  .fancybox-nav:hover {
+    span {
+      visibility: visible;
+  }
   }
 }
 @import "mobile";
