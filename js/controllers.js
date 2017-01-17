@@ -1,6 +1,6 @@
 var scrollHei = 0;
 
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'duScroll'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'duScroll', 'wu.masonry'])
     .value('duScrollDuration', 2000)
     .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $document, $uibModal) {
         //Used to name the .html file
@@ -205,7 +205,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
         $scope.template.header = "";
         $scope.template.header1 = "views/header1.html";
+        $scope.bricks=[{
+         img:'img/homenew/green-lady.jpg',
+        },{
+         img:'img/homenew/athiya.jpg',
+        },{
+         img:'img/homenew/nargis.jpg',
+        },{
+         img:'img/homenew/red-lady.jpg',
+        },{
+         img:'img/homenew/blue-lady.jpg',
+        },{
+         img:'img/homenew/caffe.jpg',
+        }];
   })
+
+
 
     .controller('EditorialCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file

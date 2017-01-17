@@ -20,32 +20,25 @@ Born in Paris, Florian’s always had a proclivity for high fashion and made his
         </div>
         <div class="img-video">
                   <div class="all-movies masonry-width">
-                                    <div masonry class="margin-auto">
+                                    <!--<div masonry class="margin-auto">
                                         <div class="masonry-brick" >
-                                            <!--ng-repeat="item in MovieGal track by $index" ng-show="item.image!='' || item.image"  {{item.image|uploadpath2}}   {{item.image|uploadpath:400}}-->
+                                            ng-repeat="item in MovieGal track by $index" ng-show="item.image!='' || item.image"  {{item.image|uploadpath2}}   {{item.image|uploadpath:400}}
                                             <div class="masonry-box">
                                                 <a href="" class="fancybox-thumb" rel="fancybox-thumb"> <img src="img/homenew/athiya.jpg" alt="Dharma Production"></a>
                                             </div>
                                         </div>
-                                        <div class="masonry-brick" >
-                                            <!--ng-repeat="item in MovieGal track by $index" ng-show="item.image!='' || item.image"  {{item.image|uploadpath2}}   {{item.image|uploadpath:400}}-->
-                                            <div class="masonry-box">
-                                                <a href="" class="fancybox-thumb" rel="fancybox-thumb"> <img src="img/homenew/nargis.jpg" alt="Dharma Production"></a>
+                                       
+                                       
+                                        
+                                    </div>-->
+                                    <div masonry>
+    <div class="masonry-brick" ng-repeat="brick in bricks">
+           <div class="masonry-box">
+                                                <a href="" class="fancybox-thumb" rel="fancybox-thumb"> <img ng-src="{{ brick.img }}" alt="A masonry brick"></a>
                                             </div>
-                                        </div>
-                                        <div class="masonry-brick" >
-                                            <!--ng-repeat="item in MovieGal track by $index" ng-show="item.image!='' || item.image"  {{item.image|uploadpath2}}   {{item.image|uploadpath:400}}-->
-                                            <div class="masonry-box">
-                                                <a href="" class="fancybox-thumb" rel="fancybox-thumb"> <img src="img/homenew/caffe.jpg" alt="Dharma Production"></a>
-                                            </div>
-                                        </div>red-lady
-                                        <div class="masonry-brick" >
-                                            <!--ng-repeat="item in MovieGal track by $index" ng-show="item.image!='' || item.image"  {{item.image|uploadpath2}}   {{item.image|uploadpath:400}}-->
-                                            <div class="masonry-box">
-                                                <a href="" class="fancybox-thumb" rel="fancybox-thumb"> <img src="img/homenew/red-lady.jpg" alt="Dharma Production"></a>
-                                            </div>
-                                        </div>
-                                    </div>
+        
+    </div>
+</div>
                                 </div>
         </div>
     </div>

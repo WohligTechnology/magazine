@@ -104,6 +104,25 @@
   .link-made a {
     padding-right: 0;
   }
+  .masonry-brick{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .navs{
+    .log{
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+    float: none!important;
+    }
+    ul{
+          float: none!important;
+    }
+  }
+
+  .img-video{
+      margin-left: 0px;
+}
 }
 
 @media (max-width: 480px) {
