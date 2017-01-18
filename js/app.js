@@ -66,6 +66,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
                 isAbout: true,
             },
             controller: 'HomeCtrl'
+        })
+        .state('aboutus', {
+            url: "/aboutus",
+            templateUrl: "views/template.html",
+            controller: 'AboutusCtrl'
         });
     $urlRouterProvider.otherwise("/");
     $locationProvider.html5Mode(isproduction);

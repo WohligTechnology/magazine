@@ -218,6 +218,42 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         },{
          img:'img/homenew/caffe.jpg',
         }];
+        $scope.brickss=[];
+        $scope.mixedBricks=[];
+        NavigationService.getTvc(function(data) {
+            $scope.tvcs = data;
+            $scope.brickss.push($scope.tvcs);
+            console.log('tvcs', $scope.tvcs);
+        });
+        NavigationService.getCelebrities(function(data) {
+            $scope.celebrities = data;
+            $scope.brickss.push($scope.celebrities);
+            console.log('celebrities', $scope.celebrities);
+        });
+        NavigationService.getEditorials(function(data) {
+            console.log(data);
+            $scope.editorials = data;
+                $scope.brickss.push($scope.editorials);
+            console.log('editorials', $scope.editorials);
+        });
+        $scope.getDesigner = function(id) {
+          NavigationService.getDesigners(id, function(data) {
+              console.log('designers', data);
+                  $scope.brickss.push(data);
+                });
+              }
+
+        NavigationService.getAllDesigners(function(data) {
+            $scope.allDesigners = data;
+            console.log("$scope.allDesigners",  $scope.allDesigners);
+            _.each($scope.allDesigners,function(key){
+              console.log("key",key.id);
+                $scope.getDesigner(key.id);
+            });
+          });
+          $scope.mixBricks =function(){
+              $scope.mixedBricks =_.flattenDeep($scope.brickss);
+          }
   })
 
 
@@ -284,6 +320,43 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.submited = false;
             }, 2000);
         };
+
+
+
+    })
+    .controller('AboutusCtrl', function($scope, TemplateService, NavigationService, $timeout,$uibModal) {
+        //Used to name the .html file
+        console.log("Testing Consoles");
+        $scope.template = TemplateService.changecontent("aboutus");
+        $scope.menutitle = NavigationService.makeactive("About");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+
+        // $scope.openThank = function() {
+        //     $scope.formcontact = {};
+        //     var modalInstance = $uibModal.open({
+        //         animation: true,
+        //         templateUrl: 'views/modal/thank.html',
+        //         backdropClass: 'backcolor'
+        //     });
+        // }
+        //
+        // $scope.formcontact = {};
+        // $scope.submited = false;
+        // $scope.sendForm = function() {
+        //     NavigationService.contactSubmit($scope.formcontact, function(data) {
+        //         if (data.value == true) {
+        //             $scope.submited = true;
+        //             $scope.openThank();
+        //         }
+        //
+        //         console.log(data);
+        //     });
+        //     $timeout(function() {
+        //         $scope.submited = false;
+        //     }, 2000);
+        // };
 
 
 
@@ -402,6 +475,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         NavigationService.getAllDesigners(function(data) {
             $scope.allDesigners = data;
+            console.log("  $scope.allDesigners",  $scope.allDesigners);
             $scope.designName = $scope.allDesigners[0].name;
             $scope.getDesigner($scope.allDesigners[0].id);
 
