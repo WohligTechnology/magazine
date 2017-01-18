@@ -332,7 +332,7 @@ body.noShow.show {
   left: 50%;
   @include transform(translate(-50%, -50%));
 }
-.home {
+.home{
   // .eight,
   // .five,
   // .four,
@@ -628,6 +628,33 @@ border-bottom: 2px solid #fff;
     width: 100%;
   }
 }
+
+.homes{
+    .about {
+    position: relative;
+    padding-bottom: 80px;
+    h2 {
+      position: relative;
+      left: -100px;
+      margin: 0;
+      font-family: $font-nova;
+      font-size: 200px;
+      letter-spacing: 10px;
+      line-height: 0.6;
+    }
+    .about-description {
+      margin-top: 40px;
+      p {
+        font-size: 13px;
+        text-align: justify;
+      }
+    }
+  }
+  .mt15{
+    margin-top: 15px;
+  }
+}
+
 
 //ruchira
 
