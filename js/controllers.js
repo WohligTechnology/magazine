@@ -219,41 +219,42 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
          img:'img/homenew/caffe.jpg',
         }];
         $scope.brickss=[];
-        $scope.mixedBricks=[];
+        $scope.celebrities=[];
+        $scope.editorials=[];
+        $scope.tvcs=[];
+        $scope.designers=[];
+        $scope.flattenDesigners =[];
         NavigationService.getTvc(function(data) {
-            $scope.tvcs = data;
-            $scope.brickss.push($scope.tvcs);
-            console.log('tvcs', $scope.tvcs);
-        });
+            $scope.tvcs = _.cloneDeep(data);
+          });
         NavigationService.getCelebrities(function(data) {
-            $scope.celebrities = data;
-            $scope.brickss.push($scope.celebrities);
-            console.log('celebrities', $scope.celebrities);
-        });
+            $scope.celebrities = _.cloneDeep(data);
+          });
         NavigationService.getEditorials(function(data) {
             console.log(data);
-            $scope.editorials = data;
-                $scope.brickss.push($scope.editorials);
-            console.log('editorials', $scope.editorials);
-        });
+            $scope.editorials = _.cloneDeep(data);
+            });
         $scope.getDesigner = function(id) {
           NavigationService.getDesigners(id, function(data) {
-              console.log('designers', data);
-                  $scope.brickss.push(data);
+            console.log("data",data);
+              $scope.designers.push(data);
+                $scope.flattenDesigners = _.flattenDeep($scope.designers);
+                $scope.brickss = $scope.flattenDesigners.concat($scope.celebrities, $scope.editorials,  $scope.tvcs);
                 });
               }
 
         NavigationService.getAllDesigners(function(data) {
             $scope.allDesigners = data;
-            console.log("$scope.allDesigners",  $scope.allDesigners);
             _.each($scope.allDesigners,function(key){
               console.log("key",key.id);
                 $scope.getDesigner(key.id);
             });
           });
-          $scope.mixBricks =function(){
-              $scope.mixedBricks =_.flattenDeep($scope.brickss);
-          }
+
+        // $scope.brickssss = $scope.flattenDesigners.concat($scope.celebrities, $scope.editorials);
+        // console.log("  $scope.brickssss",  $scope.brickssss);
+
+              // $scope.brickss = _.concat($scope.celebrities, $scope.editorials,$scope.tvcs,$scope.flattenDesigners);
   })
 
 
