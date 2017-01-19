@@ -1,6 +1,6 @@
 var scrollHei = 0;
 
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'duScroll', 'wu.masonry'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'duScroll', 'wu.masonry','infinite-scroll'])
     .value('duScrollDuration', 2000)
     .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $document, $uibModal) {
         //Used to name the .html file
@@ -26,7 +26,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.mySlides = [];
         NavigationService.getHomeImages(function(data) {
-          $scope.mySlides = data;
+            $scope.mySlides = data;
         });
 
         // $scope.mySlides = [
@@ -38,8 +38,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // ];
 
         $scope.sliderPages = {
-          about: "views/section/section6.html",
-          contact: "views/section/section8.html"
+            about: "views/section/section6.html",
+            contact: "views/section/section8.html"
         };
 
         $scope.$on('$viewContentLoaded', function(event) {
@@ -198,67 +198,85 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
     })
 
-    .controller('HomesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-        $scope.template = TemplateService.changecontent("homes");
-        $scope.menutitle = NavigationService.makeactive("Homes");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
-        $scope.template.header = "";
-        $scope.template.header1 = "views/header1.html";
-        $scope.bricks=[{
-         img:'img/homenew/green-lady.jpg',
-        },{
-         img:'img/homenew/athiya.jpg',
-        },{
-         img:'img/homenew/nargis.jpg',
-        },{
-         img:'img/homenew/red-lady.jpg',
-        },{
-         img:'img/homenew/blue-lady.jpg',
-        },{
-         img:'img/homenew/caffe.jpg',
-        }];
-        $scope.brickss=[];
-        $scope.mixedBricks=[];
-        NavigationService.getTvc(function(data) {
-            $scope.tvcs = data;
-            $scope.brickss.push($scope.tvcs);
-            console.log('tvcs', $scope.tvcs);
+.controller('HomesCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    $scope.template = TemplateService.changecontent("homes");
+    $scope.menutitle = NavigationService.makeactive("Homes");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.template.header = "";
+    $scope.template.header1 = "views/header1.html";
+    $scope.bricks = [{
+        img: 'img/homenew/green-lady.jpg',
+    }, {
+        img: 'img/homenew/athiya.jpg',
+    }, {
+        img: 'img/homenew/nargis.jpg',
+    }, {
+        img: 'img/homenew/red-lady.jpg',
+    }, {
+        img: 'img/homenew/blue-lady.jpg',
+    }, {
+        img: 'img/homenew/caffe.jpg',
+    }];
+    $scope.items = [];
+    $scope.brickss = [];
+    $scope.celebrities = [];
+    $scope.editorials = [];
+    $scope.tvcs = [];
+    $scope.designers = [];
+    $scope.flattenDesigners = [];
+
+    function shuffle(array) {
+        var currentIndex = array.length,
+            temporaryValue, randomIndex;
+        while (0 !== currentIndex) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+        return array;
+    }
+    NavigationService.getTvc(function(data) {
+        $scope.tvcs = _.cloneDeep(data);
+    });
+    NavigationService.getCelebrities(function(data) {
+        $scope.celebrities = _.cloneDeep(data);
+    });
+    NavigationService.getEditorials(function(data) {
+        console.log(data);
+        $scope.editorials = _.cloneDeep(data);
+    });
+    $scope.getDesigner = function(id) {
+        NavigationService.getDesigners(id, function(data) {
+            // console.log("data",data);
+            $scope.designers.push(data);
+            $scope.flattenDesigners = _.flattenDeep($scope.designers);
+            $scope.brickss = $scope.flattenDesigners.concat($scope.celebrities, $scope.editorials, $scope.tvcs);
+            $scope.brickss = shuffle($scope.brickss);
+            console.log(  $scope.brickss );
         });
-        NavigationService.getCelebrities(function(data) {
-            $scope.celebrities = data;
-            $scope.brickss.push($scope.celebrities);
-            console.log('celebrities', $scope.celebrities);
+
+    }
+
+    NavigationService.getAllDesigners(function(data) {
+        $scope.allDesigners = data;
+        _.each($scope.allDesigners, function(key) {
+            console.log("key", key.id);
+            $scope.getDesigner(key.id);
         });
-        NavigationService.getEditorials(function(data) {
-            console.log(data);
-            $scope.editorials = data;
-                $scope.brickss.push($scope.editorials);
-            console.log('editorials', $scope.editorials);
-        });
-        $scope.getDesigner = function(id) {
-          NavigationService.getDesigners(id, function(data) {
-              console.log('designers', data);
-                  $scope.brickss.push(data);
-                });
-              }
-
-        NavigationService.getAllDesigners(function(data) {
-            $scope.allDesigners = data;
-            console.log("$scope.allDesigners",  $scope.allDesigners);
-            _.each($scope.allDesigners,function(key){
-              console.log("key",key.id);
-                $scope.getDesigner(key.id);
-            });
-          });
-          $scope.mixBricks =function(){
-              $scope.mixedBricks =_.flattenDeep($scope.brickss);
-          }
-  })
+    });
 
 
 
-    .controller('EditorialCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+
+
+})
+
+
+
+.controller('EditorialCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         console.log("Testing Consoles");
         $scope.template = TemplateService.changecontent("editorial");
@@ -287,7 +305,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log('editorials', $scope.editorials);
         });
     })
-    .controller('ContactCtrl', function($scope, TemplateService, NavigationService, $timeout,$uibModal) {
+    .controller('ContactCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
         //Used to name the .html file
         console.log("Testing Consoles");
         $scope.template = TemplateService.changecontent("contactus");
@@ -324,7 +342,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })
-    .controller('AboutusCtrl', function($scope, TemplateService, NavigationService, $timeout,$uibModal) {
+    .controller('AboutusCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
         //Used to name the .html file
         console.log("Testing Consoles");
         $scope.template = TemplateService.changecontent("aboutus");
@@ -475,7 +493,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         NavigationService.getAllDesigners(function(data) {
             $scope.allDesigners = data;
-            console.log("  $scope.allDesigners",  $scope.allDesigners);
+            console.log("  $scope.allDesigners", $scope.allDesigners);
             $scope.designName = $scope.allDesigners[0].name;
             $scope.getDesigner($scope.allDesigners[0].id);
 

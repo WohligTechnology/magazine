@@ -31,6 +31,7 @@ var jsArray = [
   './bower_components/angular-masonry/angular-masonry.js',
   './bower_components/angulartics/dist/angulartics.min.js',
   './bower_components/angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
+    './bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js',
   './bower_components/angular-scroll/angular-scroll.min.js',
   './js/app.js',
   './js/language.js',
