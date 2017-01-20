@@ -26,15 +26,15 @@
            <div class="masonry-box">
                                         
                                      <!-- for image -->
-                     <a ng-if="brick.img" href="{{brick.img}}"  fancybox-box class="fancybox-thumb videos" rel="fancybox-thumb">
+                     <a ng-if="brick.img" href="{{brick.img}}"   class="fancybox-thumb" rel="fancybox-thumb">
                        <img ng-src="{{brick.img}}" alt="A masonry brick">
                        </a> 
                        <!-- for image -->
 
 
                        <!-- for video -->
-                       <a ng-if="brick.link" href="{{brick.link}}" fancybox-box class="fancybox.iframe videos" rel="fancybox-thumb"  class="fancybox-thumb" >
-                        <img ng-src="{{brick.link}}" alt="image">
+                       <a ng-if="brick.link" href="{{brick.link}}"  class="fancybox-thumb" rel="fancybox-thumb"  data-fancybox-type="iframe" >
+                        <span ng-src="{{brick.link}}" >
                         <span class="get-center youtube-play"><i class="fa fa-play"></i></span>
                      </a> 
                       <!-- for video -->
