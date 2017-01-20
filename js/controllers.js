@@ -207,16 +207,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.template.header1 = "views/header1.html";
     $scope.bricks = [{
         img: 'img/homenew/green-lady.jpg',
+        link:'https://www.youtube.com/embed/bHe28LklPoM?rel=0&amp;controls=0&amp;showinfo=0',
     }, {
         img: 'img/homenew/athiya.jpg',
     }, {
         img: 'img/homenew/nargis.jpg',
     }, {
         img: 'img/homenew/red-lady.jpg',
+        link:'https://www.youtube.com/embed/sjYInRDVUvI?rel=0&amp;controls=0&amp;showinfo=0',
     }, {
         img: 'img/homenew/blue-lady.jpg',
     }, {
         img: 'img/homenew/caffe.jpg',
+        link:'https://player.vimeo.com/video/159591813',
     }];
     $scope.items = [];
     $scope.brickss = [];
