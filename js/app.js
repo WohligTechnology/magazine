@@ -210,7 +210,50 @@ firstapp.filter('uploadpath', function() {
 //         }
 //     };
 // });
+firstapp.directive('aplhaOnly', function() {
+    return {
+        require: 'ngModel',
+        link: function(scope, element, attr, ngModelCtrl) {
+            function fromUser(text) {
+                var transformedInput = text.replace(/[^a-zA-Z]/g, '');
+                if (transformedInput !== text) {
+                    ngModelCtrl.$setViewValue(transformedInput);
+                    ngModelCtrl.$render();
+                }
+                return transformedInput;
+            }
+            ngModelCtrl.$parsers.push(fromUser);
+        }
+    };
+});
+firstapp.directive('onlyDigits', function() {
+    return {
+        require: 'ngModel',
+        restrict: 'A',
+        link: function(scope, element, attr, ctrl) {
+            var digits;
 
+            function inputValue(val) {
+                if (val) {
+                    if (attr.type == "tel") {
+                        digits = val.replace(/[^0-9\+\\]/g, '');
+                    } else {
+                        digits = val.replace(/[^0-9\-\\]/g, '');
+                    }
+
+
+                    if (digits !== val) {
+                        ctrl.$setViewValue(digits);
+                        ctrl.$render();
+                    }
+                    return parseInt(digits, 10);
+                }
+                return undefined;
+            }
+            ctrl.$parsers.push(inputValue);
+        }
+    };
+});
 
 firstapp.filter('youtubethumb', function() {
     return function(input, onlyid) {

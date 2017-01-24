@@ -323,6 +323,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         }
 
+
         $scope.formcontact = {};
         $scope.submited = false;
         $scope.sendForm = function() {
