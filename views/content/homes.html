@@ -21,29 +21,27 @@
       </div>
       <div class="img-video">
          <div class="all-movies masonry-width">
-            <!--<div masonry class="margin-auto">
-                                        <div class="masonry-brick" >
-                                            ng-repeat="item in MovieGal track by $index" ng-show="item.image!='' || item.image"  {{item.image|uploadpath2}}   {{item.image|uploadpath:400}}
-                                            <div class="masonry-box">
-                                                <a href="" class="fancybox-thumb" rel="fancybox-thumb"> <img src="img/homenew/athiya.jpg" alt="Dharma Production"></a>
-                                            </div>
-                                        </div>
-
-
-
-                                    </div>-->
-
-                                    <div masonry>
+                                <div masonry>
     <div class="masonry-brick" ng-repeat="brick in bricks">
            <div class="masonry-box">
-                                                <a href="" class="fancybox-thumb" data-fancybox-type="iframe" rel="fancybox-thumb"> <img ng-src="{{ brick.img }}" alt="A masonry brick"></a>
+                                        
+                                     <!-- for image -->
+                     <a ng-if="brick.img" href="{{brick.img}}"   class="fancybox-thumb" rel="fancybox-thumb">
+                       <img ng-src="{{brick.img}}" alt="A masonry brick">
+                       </a> 
+                       <!-- for image -->
+
+
+                       <!-- for video -->
+                       <a ng-if="brick.link" href="{{brick.link}}"  class="fancybox-thumb" rel="fancybox-thumb"  data-fancybox-type="iframe" >
+                        <span ng-src="{{brick.link}}" >
+                        <span class="get-center youtube-play"><i class="fa fa-play"></i></span>
+                     </a> 
+                      <!-- for video -->
+                                            
+                                          	<!--<a class="fancybox-thumb " data-fancybox-type="iframe" rel="fancybox-thumb" fancybox-box  ng-if ="{{brick.link}}" href="{{brick.link}}"><img ng-src="{{brick.img}}" alt="A masonry brick"></a>
+                                              	<a class="fancybox-thumb " data-fancybox-type="image" rel="fancybox-thumb" fancybox-box  href="{{brick.link}}"><img ng-src="{{brick.img}}" alt="A masonry brick"></a>-->
                                             </div>
-
-                     <!--<a href="{{ brick.img}}" class="fancybox-thumb" rel="fancybox-thumb">
-                       <img ng-src="{{ brick.img}}" alt="A masonry brick"></a>-->
-
-                 
-
                      </div>
                    </div>
             </div>

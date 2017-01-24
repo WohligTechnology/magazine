@@ -544,6 +544,8 @@ body.noShow.show {
    padding: 50px 0;
 }
 
+
+
 .pointer{
   cursor:pointer;
 }
@@ -554,6 +556,9 @@ body.noShow.show {
   }
   span{
     text-decoration: underline;
+    a{
+       color: #fff;
+    }
   }
 }
 
@@ -595,6 +600,17 @@ border-bottom: 2px solid #fff;
 .masonry-width {
     .masonry-box {
         width: 280px;
+        position: relative;
+            .get-center {
+              @include position(absolute, 50% null null 50%);
+              @include transform(translate(-50%,-50%));
+              padding: 6px 12px;
+              color: #000;
+              font-size: 18px;
+              width: 35px;
+              height: 35px;
+              background: #fff;
+    }
     }
 }
 .masonry-brick {

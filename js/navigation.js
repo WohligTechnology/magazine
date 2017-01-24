@@ -49,25 +49,25 @@ var navigationservice = angular.module('navigationservice', [])
       return navigation;
     },
     getHomeImages: function(callback) {
-        $http.get(apiUrl + 'getSlider').success(callback);
+        $http.get(apiUrl + 'getSlider').then(callback);
     },
     getEditorials: function(callback) {
-        $http.get(apiUrl + 'getEditorials').success(callback);
+        $http.get(apiUrl + 'getEditorials').then(callback);
     },
     getCelebrities: function(callback) {
-        $http.get(apiUrl + 'getCelebrities').success(callback);
+        $http.get(apiUrl + 'getCelebrities').then(callback);
     },
     getDesigners: function(id,callback) {
-        $http.get(apiUrl + 'getDesigners?id='+id).success(callback);
+        $http.get(apiUrl + 'getDesigners?id='+id).then(callback);
     },
     getTvc: function(callback) {
-        $http.get(apiUrl + 'getTvc').success(callback);
+        $http.get(apiUrl + 'getTvc').then(callback);
     },
     getAllDesigners: function(callback) {
-        $http.get(apiUrl + 'getDesigners').success(callback);
+        $http.get(apiUrl + 'getDesigners').then(callback);
     },
     contactSubmit: function(obj, callback) {
-        $http.post(apiUrl + 'contactSubmit',obj).success(callback);
+        $http.post(apiUrl + 'contactSubmit',obj).then(callback);
     },
     // contactSubmit: function(data,callback) {
     //     $http.get(apiUrl + 'contactSubmit').success(callback);

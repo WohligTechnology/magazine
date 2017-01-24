@@ -207,17 +207,120 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.template.header1 = "views/header1.html";
     $scope.bricks = [{
         img: 'img/homenew/green-lady.jpg',
+        // link:'https://www.youtube.com/embed/bHe28LklPoM?rel=0&amp;controls=0&amp;showinfo=0',
     }, {
         img: 'img/homenew/athiya.jpg',
     }, {
-        img: 'img/homenew/nargis.jpg',
+        img: 'img/homenew/image3.png',
     }, {
         img: 'img/homenew/red-lady.jpg',
+        // link:'https://www.youtube.com/embed/sjYInRDVUvI?rel=0&amp;controls=0&amp;showinfo=0',
     }, {
-        img: 'img/homenew/blue-lady.jpg',
+        img: 'img/homenew/image2.png',
     }, {
-        img: 'img/homenew/caffe.jpg',
+        img: 'img/homenew/caffe.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }, {
+        img: 'img/homenew/image4.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }, {
+        img: 'img/homenew/tanyatif.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    , {
+        img: 'img/homenew/kalki.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    , {
+        img: 'img/homenew/sona1.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }, {
+        img: 'img/homenew/yami.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    , {
+        img: 'img/homenew/model1.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    , {
+        img: 'img/homenew/sona2.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    , {
+        img: 'img/homenew/ramp1.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    
+    , {
+        img: 'img/homenew/ramp2.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    
+    , {
+        img: 'img/homenew/group.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    , {
+        img: 'img/homenew/kriti.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    
+    , {
+        img: 'img/homenew/groupy.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    
+    , {
+        img: 'img/homenew/shrushii.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    
+    , {
+        img: 'img/homenew/kochein.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    
+    , {
+        img: 'img/homenew/athya.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }, {
+        img: 'img/homenew/facewash.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }, {
+        img: 'img/homenew/florian.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }, {
+        img: 'img/homenew/model2.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }, {
+        img: 'img/homenew/model3.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }, {
+        img: 'img/homenew/model4.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }, {
+        img: 'img/homenew/model5.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }, {
+        img: 'img/homenew/model6.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }, {
+        img: 'img/homenew/model7.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }, {
+        img: 'img/homenew/hairstyle.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }, {
+        img: 'img/homenew/ramp3.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }, {
+        img: 'img/homenew/siddy.png',
+        // link:'https://player.vimeo.com/video/159591813',
     }];
+    
+    
+    
+    
     $scope.items = [];
     $scope.brickss = [];
     $scope.celebrities = [];

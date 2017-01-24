@@ -27,7 +27,7 @@
     "angular-sanitize": "~1.4.3",
     "font-awesome": "^4.6.3",
     "lodash": "~4.0.0",
-    "ui-router": "~0.2.15",
+    "ui-router": "*",
     "angular": "^1.5.0",
     "fancyBox": "fancybox#^2.1.5",
     "angulartics-google-analytics": "^0.1.4",
