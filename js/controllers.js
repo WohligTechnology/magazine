@@ -185,7 +185,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.submited = false;
         $scope.sendForm = function() {
             NavigationService.contactSubmit($scope.formcontact, function(data) {
-                if (data.value == true) {
+                if (data.data.value === true) {
                     $scope.submited = true;
                     $scope.openThank();
                 }
@@ -250,12 +250,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         img: 'img/homenew/ramp1.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
-    
+
     , {
         img: 'img/homenew/ramp2.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
-    
+
     , {
         img: 'img/homenew/group.png',
         // link:'https://player.vimeo.com/video/159591813',
@@ -264,22 +264,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         img: 'img/homenew/kriti.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
-    
+
     , {
         img: 'img/homenew/groupy.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
-    
+
     , {
         img: 'img/homenew/shrushii.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
-    
+
     , {
         img: 'img/homenew/kochein.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
-    
+
     , {
         img: 'img/homenew/athya.png',
         // link:'https://player.vimeo.com/video/159591813',
@@ -317,10 +317,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         img: 'img/homenew/siddy.png',
         // link:'https://player.vimeo.com/video/159591813',
     }];
-    
-    
-    
-    
+
+
+
+
     $scope.items = [];
     $scope.brickss = [];
     $scope.celebrities = [];
@@ -430,8 +430,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.formcontact = {};
         $scope.submited = false;
         $scope.sendForm = function() {
+          console.log("im in");
             NavigationService.contactSubmit($scope.formcontact, function(data) {
-                if (data.value == true) {
+              console.log("data",data);
+                if (data.data.value === true) {
                     $scope.submited = true;
                     $scope.openThank();
                 }
