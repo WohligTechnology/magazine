@@ -10,32 +10,35 @@ if (isproduction) {
 var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function($http) {
-  var navigation = [{
-    name: "TVC'S",
-    classis: "active",
-    anchor: "tvc",
-  }, {
-    name: "Designers",
-    classis: "active",
-    anchor: "designers",
-  }, {
-    name: "Editorials",
-    classis: "active",
-    anchor: "editorial",
-  }, {
-    name: "Celebrities",
-    classis: "active",
-    anchor: "celebrities",
-  }, {
+  var navigation = [
+  //   {
+  //   name: "TVC'S",
+  //   classis: "active",
+  //   anchor: "tvc",
+  // },
+  //  {
+  //   name: "Designers",
+  //   classis: "active",
+  //   anchor: "designers",
+  // }, {
+  //   name: "Editorials",
+  //   classis: "active",
+  //   anchor: "editorial",
+  // }, {
+  //   name: "Celebrities",
+  //   classis: "active",
+  //   anchor: "celebrities",
+  // },
+  {
     name: "About",
     classis: "active",
     anchor: "about",
   },
-  //  {
-  //   name: "Contact",
-  //   classis: "active",
-  //   anchor: "contact",
-  // }
+   {
+    name: "Work",
+    classis: "active",
+    anchor: "homes",
+  },
    {
     name: "Contact",
     classis: "active",
