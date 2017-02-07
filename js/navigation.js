@@ -32,7 +32,7 @@ var navigationservice = angular.module('navigationservice', [])
   {
     name: "About",
     classis: "active",
-    anchor: "about",
+    anchor: "aboutus",
   },
    {
     name: "Work",
