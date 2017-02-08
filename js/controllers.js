@@ -206,115 +206,166 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.template.header = "";
     $scope.template.header1 = "views/header1.html";
     $scope.bricks = [{
-        img: 'img/homenew/green-lady.jpg',
+        img: 'img/nomasonary/1.png',
         // link:'https://www.youtube.com/embed/bHe28LklPoM?rel=0&amp;controls=0&amp;showinfo=0',
     }, {
-        img: 'img/homenew/athiya.jpg',
+        img: 'img/nomasonary/2.png',
     }, {
-        img: 'img/homenew/image3.png',
+        img: 'img/nomasonary/3.png',
     }, {
-        img: 'img/homenew/red-lady.jpg',
+        img: 'img/nomasonary/4.png',
         // link:'https://www.youtube.com/embed/sjYInRDVUvI?rel=0&amp;controls=0&amp;showinfo=0',
     }, {
-        img: 'img/homenew/image2.png',
+        img: 'img/nomasonary/5.png',
     }, {
-        img: 'img/homenew/caffe.png',
-        // link:'https://player.vimeo.com/video/159591813',
-    }, {
-        img: 'img/homenew/image4.png',
+        img: 'img/nomasonary/6.png',
         // link:'https://player.vimeo.com/video/159591813',
     }, {
-        img: 'img/homenew/tanyatif.png',
-        // link:'https://player.vimeo.com/video/159591813',
-    }
-    , {
-        img: 'img/homenew/kalki.png',
-        // link:'https://player.vimeo.com/video/159591813',
-    }
-    , {
-        img: 'img/homenew/sona1.png',
+        img: 'img/nomasonary/celeb/1.png',
         // link:'https://player.vimeo.com/video/159591813',
     }, {
-        img: 'img/homenew/yami.png',
+        img: 'img/nomasonary/celeb/2.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
     , {
-        img: 'img/homenew/model1.png',
+        img: 'img/nomasonary/celeb/3.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
     , {
-        img: 'img/homenew/sona2.png',
+        img: 'img/nomasonary/celeb/4.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }, {
+        img: 'img/nomasonary/celeb/5.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
     , {
-        img: 'img/homenew/ramp1.png',
+        img: 'img/nomasonary/celeb/6.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
-
     , {
-        img: 'img/homenew/ramp2.png',
+        img: 'img/nomasonary/celeb/7.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    , {
+        img: 'img/nomasonary/celeb/8.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
 
     , {
-        img: 'img/homenew/group.png',
-        // link:'https://player.vimeo.com/video/159591813',
-    }
-    , {
-        img: 'img/homenew/kriti.png',
+        img: 'img/nomasonary/celeb/9.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
 
     , {
-        img: 'img/homenew/groupy.png',
+        img: 'img/nomasonary/celeb/10.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    , {
+        img: 'img/nomasonary/celeb/11.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
 
     , {
-        img: 'img/homenew/shrushii.png',
+        img: 'img/nomasonary/celeb/12.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
 
     , {
-        img: 'img/homenew/kochein.png',
+        img: 'img/nomasonary/celeb/brlycreem.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
 
     , {
-        img: 'img/homenew/athya.png',
+        img: 'img/nomasonary/celeb/14.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+
+    , {
+        img: 'img/nomasonary/designer/1.png',
         // link:'https://player.vimeo.com/video/159591813',
     }, {
-        img: 'img/homenew/facewash.png',
+        img: 'img/nomasonary/designer/2.png',
         // link:'https://player.vimeo.com/video/159591813',
     }, {
-        img: 'img/homenew/florian.png',
+        img: 'img/nomasonary/designer/3.png',
         // link:'https://player.vimeo.com/video/159591813',
     }, {
-        img: 'img/homenew/model2.png',
+        img: 'img/nomasonary/designer/4.png',
         // link:'https://player.vimeo.com/video/159591813',
     }, {
-        img: 'img/homenew/model3.png',
+        img: 'img/nomasonary/designer/5.png',
         // link:'https://player.vimeo.com/video/159591813',
     }, {
-        img: 'img/homenew/model4.png',
+        img: 'img/nomasonary/designer/6.png',
         // link:'https://player.vimeo.com/video/159591813',
     }, {
-        img: 'img/homenew/model5.png',
+        img: 'img/nomasonary/designer/7.png',
         // link:'https://player.vimeo.com/video/159591813',
     }, {
-        img: 'img/homenew/model6.png',
+        img: 'img/nomasonary/designer/8.png',
         // link:'https://player.vimeo.com/video/159591813',
     }, {
-        img: 'img/homenew/model7.png',
+        img: 'img/nomasonary/designer/9.png',
         // link:'https://player.vimeo.com/video/159591813',
     }, {
-        img: 'img/homenew/hairstyle.png',
+        img: 'img/nomasonary/designer/10.png',
         // link:'https://player.vimeo.com/video/159591813',
     }, {
-        img: 'img/homenew/ramp3.png',
+        img: 'img/nomasonary/designer/11.png',
         // link:'https://player.vimeo.com/video/159591813',
     }, {
-        img: 'img/homenew/siddy.png',
+        img: 'img/nomasonary/designer/12.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    },{
+        img: 'img/nomasonary/editorials/1.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    },{
+        img: 'img/nomasonary/editorials/2.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    },{
+        img: 'img/nomasonary/editorials/3.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    },{
+        img: 'img/nomasonary/editorials/4.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    ,{
+        img: 'img/nomasonary/editorials/5.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    ,{
+        img: 'img/nomasonary/editorials/6.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    ,{
+        img: 'img/nomasonary/editorials/7.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    
+    ,{
+        img: 'img/nomasonary/editorials/8.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    
+    ,{
+        img: 'img/nomasonary/editorials/9.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+    
+    ,{
+        img: 'img/nomasonary/editorials/10.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+     ,{
+        img: 'img/nomasonary/editorials/11.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+     ,{
+        img: 'img/nomasonary/editorials/12.png',
+        // link:'https://player.vimeo.com/video/159591813',
+    }
+     ,{
+        img: 'img/nomasonary/editorials/13.png',
         // link:'https://player.vimeo.com/video/159591813',
     }];
 

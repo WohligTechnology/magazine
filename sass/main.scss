@@ -641,7 +641,7 @@ border-bottom: 2px solid #fff;
 }
 
 .img-video{
-      margin-left: 100px;
+      margin: 0 70px;
       // padding: 20px 0;
 }
 .fancybox-thumb{
@@ -1203,6 +1203,12 @@ a.menu-logo.text-center img {
   color: #4e4e4e !important;
 }
 
+.mason{
+  margin: 10px 0;
+}
 
+.rowpad{
+  padding: 0 10px;
+}
 
 @import "mobile";
