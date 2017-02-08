@@ -415,8 +415,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Contact");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-
-
+         $scope.template.header = "views/header3.html";
+        $scope.template.header1 = "";
         $scope.openThank = function() {
             $scope.formcontact = {};
             var modalInstance = $uibModal.open({
@@ -455,7 +455,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("About");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-
+        $scope.template.header = "views/header3.html";
+        $scope.template.header1 = "";
 
         // $scope.openThank = function() {
         //     $scope.formcontact = {};
