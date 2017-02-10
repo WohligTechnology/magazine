@@ -676,6 +676,26 @@ border-bottom: 2px solid #fff;
   }
 }
 
+.mason{
+  position: relative;
+            .get-center {
+              @include position(absolute, 50% null null 50%);
+              @include transform(translate(-50%,-50%));
+              padding: 6px 12px;
+              color: #000;
+              font-size: 18px;
+              width: 35px;
+              height: 35px;
+              background: #fff;
+    }
+
+    a{
+      display: block;
+      img{
+        width: 100%;
+      }
+    }
+}
 
 //ruchira
 

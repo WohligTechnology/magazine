@@ -207,14 +207,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.template.header1 = "views/header1.html";
     $scope.bricks = [{
         img: 'img/nomasonary/1.png',
-        // link:'https://www.youtube.com/embed/bHe28LklPoM?rel=0&amp;controls=0&amp;showinfo=0',
+        link:'RiT9yk6veqQ',
     }, {
         img: 'img/nomasonary/2.png',
     }, {
         img: 'img/nomasonary/3.png',
     }, {
         img: 'img/nomasonary/4.png',
-        // link:'https://www.youtube.com/embed/sjYInRDVUvI?rel=0&amp;controls=0&amp;showinfo=0',
+        link:'nR0-029uB4E',
     }, {
         img: 'img/nomasonary/5.png',
     }, {
@@ -309,7 +309,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // link:'https://player.vimeo.com/video/159591813',
     }, {
         img: 'img/nomasonary/designer/10.png',
-        // link:'https://player.vimeo.com/video/159591813',
+        link:'RiT9yk6veqQ',
     }, {
         img: 'img/nomasonary/designer/11.png',
         // link:'https://player.vimeo.com/video/159591813',

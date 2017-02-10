@@ -11,11 +11,11 @@ var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function($http) {
   var navigation = [
-  //   {
-  //   name: "TVC'S",
-  //   classis: "active",
-  //   anchor: "tvc",
-  // },
+    {
+    name: "TVC'S",
+    classis: "active",
+    anchor: "tvc",
+  },
   //  {
   //   name: "Designers",
   //   classis: "active",
