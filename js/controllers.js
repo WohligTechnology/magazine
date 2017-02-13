@@ -207,13 +207,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.template.header1 = "views/header1.html";
     $scope.bricks = [{
         img: 'img/nomasonary/1.png',
-        link:'RiT9yk6veqQ',
-    }, {
+        // link:'RiT9yk6veqQ',
+    },
+    {
+      //  link:'https://www.youtube.com/embed/bHe28LklPoM?rel=0&amp;controls=0&amp;showinfo=0',
+          link:'RiT9yk6veqQ',
+    },
+    {
+      //  link:'https://www.youtube.com/embed/bHe28LklPoM?rel=0&amp;controls=0&amp;showinfo=0',
+        link:'nR0-029uB4E',
+    },
+    {
         img: 'img/nomasonary/2.png',
     }, {
         img: 'img/nomasonary/3.png',
     }, {
-        img: 'img/nomasonary/4.png',
+        // img: 'img/nomasonary/4.png',
         link:'nR0-029uB4E',
     }, {
         img: 'img/nomasonary/5.png',
@@ -341,17 +350,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         img: 'img/nomasonary/editorials/7.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
-    
+
     ,{
         img: 'img/nomasonary/editorials/8.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
-    
+
     ,{
         img: 'img/nomasonary/editorials/9.png',
         // link:'https://player.vimeo.com/video/159591813',
     }
-    
+
     ,{
         img: 'img/nomasonary/editorials/10.png',
         // link:'https://player.vimeo.com/video/159591813',

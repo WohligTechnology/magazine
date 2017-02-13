@@ -5,12 +5,14 @@
             <div class="col-md-2"></div>
             <div class="col-md-4">
                <p class="text-justify">
-                    Born in Paris, Florian started his career in beauty at the age of 16 working under the world renowned hair stylists, Laurent Decreton and George Manuel. In his first year of training, Florian received a French Government award, for the highest achiever, beating over 15,000 other hair styling students in France. A hair and make-up professional with over 12 years of experience, Florian Hurel’s career has taken him all over the world.
+                  Born in Paris, Florian started his career in beauty at the age of 16 working under the world renowned hair stylists, Laurent Decreton and George Manuel. In his first year of training, Florian received a French Government award, for the highest achiever,
+                  beating over 15,000 other hair styling students in France. A hair and make-up professional with over 12 years of experience, Florian Hurel’s career has taken him all over the world.
                </p>
             </div>
             <div class="col-md-4 ">
                <p class="text-justify">
-                 Having moved to Mumbai in 2015, he’s built an enviable reputation in a very short period of time based on his unrivaled international experience. He has lent his expertise everywhere, from the Cannes Film Festival to Roland Garros and regularly works at Paris Fashion Week for designers such as Chanel and Louis Vuitton.
+                  Having moved to Mumbai in 2015, he’s built an enviable reputation in a very short period of time based on his unrivaled international experience. He has lent his expertise everywhere, from the Cannes Film Festival to Roland Garros and regularly works
+                  at Paris Fashion Week for designers such as Chanel and Louis Vuitton.
                </p>
                <span class="pointer pull-right uppercases"><a ui-sref="aboutus" target="_blank" >Know More</a></span>
                <div class="clearfix"></div>
@@ -19,65 +21,78 @@
          </div>
       </div>
       <div class="img-video">
-        <div class="row ">
-          <div class="col-md-3 rowpad" ng-repeat="brick in bricks">
- <div class="mason" >
-    <!--for image -->
-                     <a ng-if="brick.img" href="{{brick.img}}" fancybox-box rel="cop" >
-                       <img ng-src="{{brick.img}}"  alt="A masonry brick">
-                       </a> 
-                       <!--for image -->
+         <div class="row ">
+            <div class="col-md-3 rowpad" ng-repeat="brick in bricks">
+               <div class="mason">
+                  <!--for image -->
+                  <!-- <a ng-if="brick.img" href="{{brick.img}}" fancybox-box rel="cop">
+                     <img ng-src="{{brick.img}}" alt="A masonry brick">
+                  </a> -->
+                  <a ng-if="brick.img" href="{{brick.img}}"   class="fancybox-thumb" rel="fancybox-thumb">
+                                        <img ng-src="{{brick.img}}" alt="A masonry brick">
+                                       </a>
+
+                  <!--for image -->
 
 
-                        <!--for video -->
-                       <!--<a ng-if="brick.link" href="{{brick.link}}"  class="fancybox-thumb" rel="fancybox-thumb"  data-fancybox-type="iframe" >-->
-                       <a ng-if="brick.link"  href="http://www.youtube.com/embed/{{brick.link | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" fancybox-box class="fancybox.iframe" rel="cop"  >
-                        <!--<span ng-src="{{brick.link}}" >-->
-                        <span class="get-center youtube-play"><i class="fa fa-play"></i></span>
-                          <div class="media-image">
-                                            <img ng-src="{{brick.img}}" alt="" class="">
-                                            <div class="play" ng-if="brick.link">
-                                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>
-                                            </div>
-                                        </div>
-                     </a> 
-                       <!--for video -->
-   <!--<a  href="{{brick.img}}"   class="fancybox-thumb" rel="fancybox-thumb">
-                       <img ng-src="{{brick.img}}"  alt="A masonry brick">
-                       </a> -->
-        </div>
-          </div>
-        </div>
-       
+                  <!--for video -->
 
-        
+                  <a ng-if="brick.link"  href="http://www.youtube.com/embed/{{brink.link | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" class="fancybox-thumb" rel="fancybox-thumb"  data-fancybox-type="iframe" >
+                                         <span ng-src="{{brick.link |trusted}}" >
+                                         <span class="get-center youtube-play"><i class="fa fa-play"></i></span>
+                                      </a>
+
+                    <!-- <a ng-if="brick.link" href="http://www.youtube.com/embed/{{brink.link | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" fancybox-box class="fancybox.iframe" rel="fancybox-thumb"  class="fancybox-thumb" rel="fancybox-thumb">
+                      <img ng-src="{{brick.link | youtubethumb:false}}" alt="" class="youtube-img img-responsive">
+                      <span class="get-center youtube-play"><i class="fa fa-play"></i></span>
+                    </a> -->
+
+
+                  <!-- <a ng-if="brick.link" href="http://www.youtube.com/embed/{{brick.link | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" fancybox-box class="fancybox.iframe" rel="cop">
+
+                     <span class="get-center youtube-play"><i class="fa fa-play"></i></span> -->
+                     <div class="media-image">
+                        <!-- <img ng-src="{{brick.img}}" alt="" class=""> -->
+                        <div class="play" ng-if="brick.link">
+                           <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+                        </div>
+                     </div>
+                  </a>
+                  <!--for video -->
+
+               </div>
+            </div>
+         </div>
+
+
+
          <!--<div class="all-movies masonry-width">
                                 <div masonry>
     <div class="masonry-brick" ng-repeat="brick in bricks">
            <div class="masonry-box">
-                                        
-                                      for image 
+
+                                      for image
                      <a ng-if="brick.img" href="{{brick.img}}"   class="fancybox-thumb" rel="fancybox-thumb">
                        <img ng-src="{{brick.img}}"  alt="A masonry brick">
-                       </a> 
-                        for image 
+                       </a>
+                        for image
 
 
-                        for video 
+                        for video
                        <a ng-if="brick.link" href="{{brick.link}}"  class="fancybox-thumb" rel="fancybox-thumb"  data-fancybox-type="iframe" >
                         <span ng-src="{{brick.link}}" >
                         <span class="get-center youtube-play"><i class="fa fa-play"></i></span>
-                     </a> 
-                       for video 
-                                            
-                                          
+                     </a>
+                       for video
+
+
                                             </div>
                      </div>
                    </div>
             </div>-->
-         </div>
       </div>
    </div>
 </div>
-	<!--<a class="fancybox-thumb " data-fancybox-type="iframe" rel="fancybox-thumb" fancybox-box  ng-if ="{{brick.link}}" href="{{brick.link}}"><img ng-src="{{brick.img}}" alt="A masonry brick"></a>
+</div>
+<!--<a class="fancybox-thumb " data-fancybox-type="iframe" rel="fancybox-thumb" fancybox-box  ng-if ="{{brick.link}}" href="{{brick.link}}"><img ng-src="{{brick.img}}" alt="A masonry brick"></a>
                                               	<a class="fancybox-thumb " data-fancybox-type="image" rel="fancybox-thumb" fancybox-box  href="{{brick.link}}"><img ng-src="{{brick.img}}" alt="A masonry brick"></a>-->

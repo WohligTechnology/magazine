@@ -254,6 +254,11 @@ firstapp.directive('onlyDigits', function() {
         }
     };
 });
+firstapp.filter('trusted', ['$sce', function($sce) {
+    return function(url) {
+        return $sce.trustAsResourceUrl(url);
+    };
+}]);
 
 firstapp.filter('youtubethumb', function() {
     return function(input, onlyid) {
